@@ -68,9 +68,9 @@ Install Required Packages: Make sure you have a virtual environment set up (opti
 
     pip install -r requirements.txt
 
-    Create Your Process: Follow the documentation in the repository to set up your process model.
+Create Your Process: Follow the documentation in the repository to set up your process model.
 
-    Simulate Process: Use the provided simulation tools to run your process model. Check the usage examples in the documentation for guidance.
+Simulate Process: Use the provided simulation tools to run your process model. Check the usage examples in the documentation for guidance.
 
 Additional Notes
 
