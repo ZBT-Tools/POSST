@@ -3,6 +3,7 @@
 **Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**
 
 ### Project partner:
+
 <p align="left">
   <img src="pic/ESS_LOGO_vektor.svg" alt="ESS Logo" width="40">
 <a href="https://www.energy-system-solutions.de/">Energy System Solutions (ESS)<sup>1</sup></a>
@@ -59,12 +60,13 @@ To install the package using pip, run the following command:
 
 If you prefer to install directly from the repository, follow these steps:
 
-    Clone the Repository:
+Clone the Repository:
+
     git clone https://github.com/ZBT-Tools/POSST.git
 
 Navigate to the Project Directory:
 
-    cd POSST
+    cd yourPath/POSST
 
 Install Required Packages: Make sure you have a virtual environment set up (optional but recommended). Then install the required packages:
 
