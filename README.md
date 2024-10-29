@@ -57,7 +57,7 @@ A Python library generates the compressor characteristic diagram:
 </p>
 
 ### 5. Modelling of the Fuel Cell
-The fuel cell stack is modeled in terms of flow fields, cell voltage, and thermal management. Waste heat and coolant flow affect the system’s temperature.
+To reduce a 2-D + 1-D spatially resolved fuel cell model to a voltage model, several simplifications are necessary. By focusing only on the voltage model and ignoring certain sub-models, the complexity of the simulation can be significantly reduced while maintaining core performance characteristics relevant to voltage output.
 
 ---
 
