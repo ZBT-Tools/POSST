@@ -1,5 +1,7 @@
-# POSST
-**Python Open Source Simulation Tool (POSST): Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**
+# Python Open Source Simulation Tool (POSST):
+
+**Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**
+
 ### Project partner:
 <p align="left">
   <img src="pic/ESS_LOGO_vektor.svg" alt="ESS Logo" width="40">
