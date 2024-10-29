@@ -3,6 +3,7 @@
 **Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**
 
 ### Project partner:
+
 <p align="left">
   <img src="pic/ESS_LOGO_vektor.svg" alt="ESS Logo" width="40">
 <a href="https://www.energy-system-solutions.de/">Energy System Solutions (ESS)<sup>1</sup></a>
