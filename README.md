@@ -62,10 +62,11 @@ To reduce a 2-D + 1-D spatially resolved fuel cell model to a voltage model, sev
 ---
 
 ## References
-1. Zahn, S. “Arbeitsspielaufgelöste Modellbildung und Hardware-in-the-Loop-Simulation von Pkw-Dieselmotoren mit Abgasturboaufladung.”
-2. Guzzella, L., Onder, C. “Introduction to Modeling and Control of Internal Combustion Engine Systems.”
-3. Virtanen, P. et al. “SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python.”
-4. Gößling, S. “2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen.”
+[1]	Dipl.-Ing. Sebastian Zahn, "Arbeitsspielaufgelöste Modellbildung und Hardware-in-the-Loop-Simulation von Pkw-Dieselmotoren mit Abgasturboaufladung," Fachbereich Elektrotechnik und Informationstechnik, Technische Universität Darmstadt, Darmstadt, 2012.<br>
+[2]	L. Guzzella und C. Onder, Introduction to Modeling and Control of Internal Combustion Engine Systems, 2. Aufl. Berlin, Heidelberg: Springer Berlin Heidelberg, 2009. [Online]. Verfügbar unter: http://nbn-resolving.org/urn:nbn:de:bsz:31-epflicht-1527427<bR>
+[3]	P. Virtanen et al., "SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python," Nature Methods, Jg. 17, S. 261–272, 2020, doi: 10.1038/s41592-019-0686-2.<br>
+[4]	S. Gößling, "2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen," Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.
+
 
 ---
 
