@@ -42,14 +42,50 @@ hljs.highlightAll();
 <span>(</span><span>name='Pipe', V=0.001, T_0=293.15, p_0=101350.0, cp=1000, R=237, dt=0.001)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Volume of container/pipe etc.</p>
+<div class="desc"><h2 id="arguments">Arguments</h2>
+<pre><code>V = volumne of container element  
+T_0 = start temperature   
+p_0 = start pressure  
+cp = specific heat capacity  
+R = gas constant  
+dt = time step
+</code></pre>
+<h2 id="returns">Returns</h2>
+<pre><code>p = current pressure
+T = current Temperature
+</code></pre>
+<h2 id="description">Description</h2>
+<p>Model to define Volumne of Container and Calculation of states.
+</p>
+<h3 id="calculation">Calculation</h3>
+<p>$ \frac{\delta p}{\delta t} = $</p>
 <p>Initialisierung der Leitungen</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class model_1():
-    &#34;&#34;&#34;Volume of container/pipe etc.&#34;&#34;&#34;
+    r&#34;&#34;&#34;
+    ## Arguments
+    
+    
+        V = volumne of container element  
+        T_0 = start temperature   
+        p_0 = start pressure  
+        cp = specific heat capacity  
+        R = gas constant  
+        dt = time step  
+    ## Returns
+        
+    
+        p = current pressure
+        T = current Temperature
+    ## Description  
+    Model to define Volumne of Container and Calculation of states.  
+    ### Calculation  
+    $ \frac{\delta p}{\delta t} = $
+    &#34;&#34;&#34;
+    
     def __init__(self, name = &#34;Pipe&#34;, V=0.001, T_0 = 293.15, p_0 = 1.0135e5, cp = 1000 ,R =237, dt=1e-3): # 8.314):
         &#34;&#34;&#34;Initialisierung der Leitungen&#34;&#34;&#34;
         self.name = name
