@@ -3,13 +3,15 @@ eps=1e-13
 class model_1():
     """
     Args:
-        dt:=time step  
-        dn:=??   
-        cp:=specific heat capacity  
-        R:=Gaskonstant  
-        repo:="./POSST"  
+        dt=time step  
+        dn=??   
+        cp=specific heat capacity  
+        R= gas constant  
+        repo="./POSST"  
     Returns:
-        m:=massflow
+        m=massflow
+    Description:
+        **Model for fitting curve 1**
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
@@ -46,6 +48,18 @@ class model_1():
 
 
 class model_2():
+    """
+    Args:
+        dt=time step  
+        dn=??   
+        cp=specific heat capacity  
+        R= gas constant  
+        repo="./POSST"  
+    Returns:
+        m=massflow
+    Description:
+        **Model for fitting curve 2**
+    """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
         self.cp = cp
