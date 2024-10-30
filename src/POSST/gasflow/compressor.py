@@ -1,7 +1,7 @@
 import numpy as np
 eps=1e-13
 class model_1():
-    """
+    r"""
     Args:
         
         dt=time step  
@@ -14,8 +14,8 @@ class model_1():
         m=massflow
     Description:
         
-        **Model for fitting curve 1**  
-        $ m = y\cdotx$
+        Model for fitting curve 2 
+        $m = y \cdot x$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
@@ -52,7 +52,7 @@ class model_1():
 
 
 class model_2():
-    """
+    r"""
     Args:
         
         dt=time step  
@@ -65,8 +65,8 @@ class model_2():
         m=massflow
     Description:
         
-        **Model for fitting curve 2**  
-        $ m = y\cdotx$
+        Model for fitting curve 2 
+        $m = y \cdot x$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
