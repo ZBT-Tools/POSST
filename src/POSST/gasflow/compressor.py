@@ -1,6 +1,14 @@
 import numpy as np
 eps=1e-13
 class model_1():
+    """
+    Args:
+        dt: time step  
+        dn: ??  
+        cp: specific heat capacity  
+        R: Gaskonstant  
+        repo: "./POSST"  
+    """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
         self.cp = cp
