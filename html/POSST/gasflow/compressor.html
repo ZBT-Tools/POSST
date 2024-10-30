@@ -39,28 +39,29 @@ hljs.highlightAll();
 <span>def <span class="ident">load_comp</span></span>(<span>data_dir='/data')</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data_dir</code></strong></dt>
-<dd></dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>dict</code></dt>
-<dd></dd>
-</dl>
-<p>./data_dir</p>
-<pre><code>|-rpm0.h5  
-|-rpm1.h5  
-:  
-|-rpmN.h5
+<div class="desc"><h2 id="arguments">Arguments</h2>
+<pre><code>data_dir
 </code></pre>
-<p>rpm0.h5
-</p>
-<pre><code>|-m: [...]  
-|-p: [...]  
-|-n: [...]  
-|-etha: [...]
+<h2 id="returns">Returns</h2>
+<pre><code>dict
+</code></pre>
+<p>Description</p>
+<pre><code>    ./data_dir
+
+
+        |-rpm0.h5  
+        |-rpm1.h5  
+        :  
+        |-rpmN.h5
+
+
+    rpm0.h5
+
+
+        |-m: [...]  
+        |-p: [...]  
+        |-n: [...]  
+        |-etha: [...]
 </code></pre></div>
 </dd>
 <dt id="POSST.gasflow.compressor.p_fit"><code class="name flex">
@@ -265,15 +266,16 @@ hljs.highlightAll();
 <span>(</span><span>dt, dn, cp=1000, R=237, repo_dir='./POSST')</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="args">Args</h2>
-<p>dt=time step<br>
-dn=?? <br>
-cp=specific heat capacity<br>
-R= gas constant<br>
-repo="./POSST"
-</p>
+<div class="desc"><h2 id="arguments">Arguments</h2>
+<pre><code>dt = time step  
+dn = ??   
+cp = specific heat capacity  
+R = gas constant  
+repo = "./POSST"
+</code></pre>
 <h2 id="returns">Returns</h2>
-<p>m=massflow</p>
+<pre><code>m=massflow
+</code></pre>
 <h2 id="description">Description</h2>
 <p>Model for fitting curve 2<br>
 $m = y \cdot x$</p></div>
@@ -283,20 +285,21 @@ $m = y \cdot x$</p></div>
 </summary>
 <pre><code class="python">class model_1():
     r&#34;&#34;&#34;
-    Args:
+    ## Arguments
+    
+    
+        dt = time step  
+        dn = ??   
+        cp = specific heat capacity  
+        R = gas constant  
+        repo = &#34;./POSST&#34;  
+    ## Returns
         
-        dt=time step  
-        dn=??   
-        cp=specific heat capacity  
-        R= gas constant  
-        repo=&#34;./POSST&#34;  
-    Returns:
-        
+    
         m=massflow
-    Description:
-        
-        Model for fitting curve 2  
-        $m = y \cdot x$
+    ## Description  
+    Model for fitting curve 2  
+    $m = y \cdot x$
     &#34;&#34;&#34;
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir=&#39;./POSST&#39;):
         self.dt = dt
@@ -337,15 +340,16 @@ $m = y \cdot x$</p></div>
 <span>(</span><span>dt, dn, cp=1000, R=237, repo_dir='./POSST')</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="args">Args</h2>
-<p>dt=time step<br>
-dn=?? <br>
-cp=specific heat capacity<br>
-R= gas constant<br>
-repo="./POSST"
-</p>
+<div class="desc"><h2 id="arguments">Arguments</h2>
+<pre><code>dt = time step  
+dn = ??   
+cp = specific heat capacity  
+R = gas constant  
+repo = "./POSST"
+</code></pre>
 <h2 id="returns">Returns</h2>
-<p>m=massflow</p>
+<pre><code>m=massflow
+</code></pre>
 <h2 id="description">Description</h2>
 <p>Model for fitting curve 2<br>
 $m = y \cdot x$</p></div>
@@ -355,20 +359,21 @@ $m = y \cdot x$</p></div>
 </summary>
 <pre><code class="python">class model_2():
     r&#34;&#34;&#34;
-    Args:
+    ## Arguments
+    
+    
+        dt = time step  
+        dn = ??   
+        cp = specific heat capacity  
+        R = gas constant  
+        repo = &#34;./POSST&#34;  
+    ## Returns
         
-        dt=time step  
-        dn=??   
-        cp=specific heat capacity  
-        R= gas constant  
-        repo=&#34;./POSST&#34;  
-    Returns:
-        
+    
         m=massflow
-    Description:
-        
-        Model for fitting curve 2  
-        $m = y \cdot x$
+    ## Description  
+    Model for fitting curve 2  
+    $m = y \cdot x$
     &#34;&#34;&#34;
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir=&#39;./POSST&#39;):
         self.dt = dt

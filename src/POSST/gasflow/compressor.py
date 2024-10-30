@@ -2,20 +2,21 @@ import numpy as np
 eps=1e-13
 class model_1():
     r"""
-    Args:
+    ## Arguments
+    
+    
+        dt = time step  
+        dn = ??   
+        cp = specific heat capacity  
+        R = gas constant  
+        repo = "./POSST"  
+    ## Returns
         
-        dt=time step  
-        dn=??   
-        cp=specific heat capacity  
-        R= gas constant  
-        repo="./POSST"  
-    Returns:
-        
+    
         m=massflow
-    Description:
-        
-        Model for fitting curve 2  
-        $m = y \cdot x$
+    ## Description  
+    Model for fitting curve 2  
+    $m = y \cdot x$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
@@ -53,20 +54,21 @@ class model_1():
 
 class model_2():
     r"""
-    Args:
+    ## Arguments
+    
+    
+        dt = time step  
+        dn = ??   
+        cp = specific heat capacity  
+        R = gas constant  
+        repo = "./POSST"  
+    ## Returns
         
-        dt=time step  
-        dn=??   
-        cp=specific heat capacity  
-        R= gas constant  
-        repo="./POSST"  
-    Returns:
-        
+    
         m=massflow
-    Description:
-        
-        Model for fitting curve 2  
-        $m = y \cdot x$
+    ## Description  
+    Model for fitting curve 2  
+    $m = y \cdot x$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
@@ -239,28 +241,34 @@ class interp_Comp_m():
 
 def load_comp(data_dir = '/data'):
     '''
-    Args:
-        
-        data_dir:  
-    Returns:
-        
-        dict:  
-            
-    ./data_dir
+    ## Arguments
     
+        
+        data_dir  
+    ## Returns
+        
     
-        |-rpm0.h5  
-        |-rpm1.h5  
-        :  
-        |-rpmN.h5  
+        dict  
+    
+    Description
+        
+        
+            ./data_dir
+        
+        
+                |-rpm0.h5  
+                |-rpm1.h5  
+                :  
+                |-rpmN.h5  
 
 
-    rpm0.h5  
-    
-        |-m: [...]  
-        |-p: [...]  
-        |-n: [...]  
-        |-etha: [...]  
+            rpm0.h5
+        
+        
+                |-m: [...]  
+                |-p: [...]  
+                |-n: [...]  
+                |-etha: [...] 
     '''
 
     import h5py
