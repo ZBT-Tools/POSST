@@ -1,6 +1,26 @@
 
 class model_1():
-    """Volume of container/pipe etc."""
+    r"""
+    ## Arguments
+    
+    
+        V = volumne of container element  
+        T_0 = start temperature   
+        p_0 = start pressure  
+        cp = specific heat capacity  
+        R = gas constant  
+        dt = time step  
+    ## Returns
+        
+    
+        p = current pressure
+        T = current Temperature
+    ## Description  
+    Model to define Volumne of Container and Calculation of states.  
+    ### Calculation  
+    $ \frac{\delta p}{\delta t} = $
+    """
+    
     def __init__(self, name = "Pipe", V=0.001, T_0 = 293.15, p_0 = 1.0135e5, cp = 1000 ,R =237, dt=1e-3): # 8.314):
         """Initialisierung der Leitungen"""
         self.name = name
