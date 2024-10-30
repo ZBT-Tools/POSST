@@ -3,13 +3,13 @@ eps=1e-13
 class model_1():
     """
     Args:
-        dt::time step  
-        dn::??   
-        cp::specific heat capacity  
-        R::Gaskonstant  
-        repo::"./POSST"  
+        dt:=time step  
+        dn:=??   
+        cp:=specific heat capacity  
+        R:=Gaskonstant  
+        repo:="./POSST"  
     Returns:
-        m::massflow
+        m:=massflow
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt

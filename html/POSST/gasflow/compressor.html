@@ -264,14 +264,14 @@ hljs.highlightAll();
 </code></dt>
 <dd>
 <div class="desc"><h2 id="args">Args</h2>
-<p>dt::time step<br>
-dn::?? <br>
-cp::specific heat capacity<br>
-R::Gaskonstant<br>
-repo::"./POSST"
+<p>dt:=time step<br>
+dn:=?? <br>
+cp:=specific heat capacity<br>
+R:=Gaskonstant<br>
+repo:="./POSST"
 </p>
 <h2 id="returns">Returns</h2>
-<p>m::massflow</p></div>
+<p>m:=massflow</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -279,13 +279,13 @@ repo::"./POSST"
 <pre><code class="python">class model_1():
     &#34;&#34;&#34;
     Args:
-        dt::time step  
-        dn::??   
-        cp::specific heat capacity  
-        R::Gaskonstant  
-        repo::&#34;./POSST&#34;  
+        dt:=time step  
+        dn:=??   
+        cp:=specific heat capacity  
+        R:=Gaskonstant  
+        repo:=&#34;./POSST&#34;  
     Returns:
-        m::massflow
+        m:=massflow
     &#34;&#34;&#34;
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir=&#39;./POSST&#39;):
         self.dt = dt
