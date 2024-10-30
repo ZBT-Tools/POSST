@@ -207,20 +207,28 @@ class interp_Comp_m():
 
 def load_comp(data_dir = '/data'):
     '''
-    :param data_dir:
-    :return dict:
-
+    Args:
+        
+        data_dir:  
+    Returns:
+        
+        dict:  
+            
     ./data_dir
-        |-rpm0.h5
-        |-rpm1.h5
-        :
-        |-rpmN.h5
+    
+    
+        |-rpm0.h5  
+        |-rpm1.h5  
+        :  
+        |-rpmN.h5  
 
-    rpm0.h5
-        |-m: [...]
-        |-p: [...]
-        |-n: [...]
-        |-etha: [...]
+
+    rpm0.h5  
+    
+        |-m: [...]  
+        |-p: [...]  
+        |-n: [...]  
+        |-etha: [...]  
     '''
 
     import h5py
