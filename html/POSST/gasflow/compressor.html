@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>POSST.gasflow.compressor API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>POSST.gasflow.compressor</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+eps=1e-13
+class model_1():
+    def __init__(self, dt, dn, cp=1000, R=237, repo_dir=&#39;./POSST&#39;):
+        self.dt = dt
+        self.cp = cp
+        self.R = R
+        self.cv = cp - R
+        self.kappa = self.cp / self.cv
+
+        self.m_fit = interp_Comp_m(ddir=repo_dir + &#39;/BZ_Sim/Comp_interp/data&#39;)
+        self.m = 0
+        self.n_t = 0
+        self.dn = dn * self.dt
+        self.iteration = 0
+        self.P_ver = 0
+        self.etha = 0.7
+        self.T_out = 293.15
+
+    def __call__(self, n, p_in, p_out, T_in=293.15):
+        self.iteration += 1
+        p_ratio = p_out / p_in
+        self.n_t = np.clip(n, max(self.m_fit.min_n, self.n_t - self.dn), min(self.m_fit.max_n, self.n_t + self.dn))
+        if n &gt; 1e-7:
+            try:
+                self.m = self.m_fit(self.n_t, p_ratio)
+            except:
+                self.m = max(self.m, 1e-7)
+
+            self.P_ver = self.m * self.cp * T_in * (p_ratio ** ((self.kappa - 1) / self.kappa) - 1) / self.etha
+            self.T_out = (T_in * p_ratio ** ((self.kappa - 1) / self.kappa) - T_in) / self.etha + T_in
+        else:
+            self.m = 0
+
+        return self.m
+
+
+class model_2():
+    def __init__(self, dt, dn, cp=1000, R=237, repo_dir=&#39;./POSST&#39;):
+        self.dt = dt
+        self.cp = cp
+        self.R = R
+        self.cv = cp - R
+        self.kappa = self.cp / self.cv
+        self.dn = dn * self.dt
+        self.m = 0
+        self.n_t = 0
+
+        import restriction as res
+        self.total_p = interp_Comp_p(ddir=repo_dir + &#39;/BZ_Sim/Comp_interp/data&#39;)
+        # self.Res_Co = Restriction(A=np.pi*(2e-3)**2, dt=1e-3, R=287)
+        self.Res_Co = res.model_1(l=1.000e-03, b=1.633e+00, h=1.633e+00, R=287)
+
+        self.P_ver = 0
+        self.etha = 0.7
+        self.T_out = 293.15
+
+    def __call__(self, n, p_in, p_out, T_in=293.15):
+        self.n_t = np.clip(n, max(self.total_p.min_n, self.n_t - self.dn), min(self.total_p.max_n, self.n_t + self.dn))
+        if self.n_t &gt;= 1e-7:
+            self.m = self.Res_Co.m
+            self.m = abs(self.m)
+            self.p_comp = max(self.total_p(n=n, m=self.Res_Co.m) * p_in, p_in + 1.01)
+
+            p_ratio = self.p_comp / p_in
+            self.P_ver = self.m * self.cp * T_in * (p_ratio ** ((self.kappa - 1) / self.kappa) - 1) / self.etha
+            self.T_out = (T_in * p_ratio ** ((self.kappa - 1) / self.kappa) - T_in) / self.etha + T_in
+        else:
+            self.p_comp = p_in
+        self.Res_Co(p_in=p_in, p_out=p_out, T_in=T_in)
+
+        return self.m
+
+class interp_Comp_p():
+    def __init__(self, ddir=&#39;./data&#39;):
+        import scipy
+        self.data_raw = load_comp(data_dir=ddir)
+        self.data_raw |= {&#39;0&#39;: {&#39;etha&#39;: [1], &#39;m&#39;:[eps], &#39;p&#39;:[1.], &#39;n&#39;:[0]}}
+        self.m_grid, self.n_grid, self.p_grid = self.grid_calc()
+        self.interp = scipy.interpolate.RegularGridInterpolator((self.m_grid[:,0], self.n_grid[0,:]), self.p_grid)
+
+    def __call__(self, n, m):
+        self.m_clip = np.clip(m, self.min_m, self.max_m)
+        self.n_clip = np.clip(n, self.min_n, self.max_n)
+        self.p = self.interp((self.m_clip, self.n_clip))
+        return max(self.p, 0)
+
+    def grid_calc(self):
+        import numpy as np
+        import scipy
+        import copy
+        self.m_ori= [0.00000000]
+        self.p_ori= [1]
+        self.n_ori= [0]
+
+        for i in self.data_raw.keys():
+            if i != &#39;Surge&#39;:
+                self.m_ori += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.p_ori += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.n_ori += list(np.full(len(self.data_raw[i][&#39;n&#39;]), int(i)))
+
+        self.p_ori = np.array(self.p_ori)
+        self.m_ori = np.array(self.m_ori)
+        self.n_ori = np.array(self.n_ori)
+
+        self.max_m = self.m_ori.max()
+        self.min_m = self.m_ori.min()
+        self.max_n = self.n_ori.max()
+        self.min_n = self.n_ori.min()
+        self.max_p = self.p_ori.max()
+        self.min_p = self.p_ori.min()
+
+        self.p_fit_arr = [1.]
+        self.m_fit_arr = [eps]
+        self.n_fit_arr = [0]
+        for i in self.data_raw.keys():
+            if i != &#39;0&#39;:
+                self.m_fit = np.linspace(self.min_m,self.max_m,100)
+                para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i][&#39;m&#39;])),
+                               p=copy.deepcopy(list(self.data_raw[i][&#39;p&#39;])))
+                self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))], *para))
+                self.m_fit_arr += list(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))])
+                self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))]), int(i)))
+            else:
+                self.p_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.m_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.n_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;n&#39;]))
+            None
+
+
+        grid_x, grid_y = np.mgrid[self.min_m:self.max_m:100j, self.min_n:self.max_n:100j]
+        grid_z = scipy.interpolate.griddata((self.m_fit_arr, self.n_fit_arr), self.p_fit_arr, (grid_x, grid_y), method=&#39;linear&#39;, fill_value=1)
+
+        return grid_x, grid_y, grid_z
+
+    def p_ex(self, m, p):
+        import scipy
+        popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
+        return popt
+
+class interp_Comp_m():
+    def __init__(self, ddir=&#39;./data&#39;):
+        import scipy
+        self.data_raw = load_comp(data_dir=ddir)
+        self.data_raw |= {&#39;0&#39;: {&#39;etha&#39;: [1], &#39;m&#39;:[eps], &#39;p&#39;:[1.], &#39;n&#39;:[0]}}
+        self.p_grid, self.n_grid, self.m_grid = self.grid_calc()
+        self.interp = scipy.interpolate.RegularGridInterpolator((self.p_grid[:,0], self.n_grid[0,:]), self.m_grid)
+
+    def __call__(self, n, p_ratio):
+        self.p_clip = np.clip(p_ratio, self.min_p, self.max_p)
+        self.n_clip = np.clip(n, self.min_n, self.max_n)
+        self.m = self.interp((self.p_clip, self.n_clip))
+        return self.m
+
+    def grid_calc(self):
+        import numpy as np
+        import scipy
+        import copy
+        self.m_ori= [0.]
+        self.p_ori= [1]
+        self.n_ori= [0.]
+
+        for i in self.data_raw.keys():
+            if i != &#39;Surge&#39;:
+                self.m_ori += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.p_ori += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.n_ori += list(np.full(len(self.data_raw[i][&#39;n&#39;]), int(i)))
+
+        self.p_ori = np.array(self.p_ori)
+        self.m_ori = np.array(self.m_ori)
+        self.n_ori = np.array(self.n_ori)
+
+        self.max_m = self.m_ori.max()
+        self.min_m = self.m_ori.min()
+        self.max_n = self.n_ori.max()
+        self.min_n = self.n_ori.min()
+        self.max_p = self.p_ori.max()
+        self.min_p = self.p_ori.min()
+
+        self.p_fit_arr = [1.]
+        self.m_fit_arr = [eps]
+        self.n_fit_arr = [0.]
+        for i in self.data_raw.keys():
+            if i != &#39;0&#39;:
+                self.m_fit = np.linspace(self.min_m,self.max_m,100)
+                para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i][&#39;m&#39;])),
+                               p=copy.deepcopy(list(self.data_raw[i][&#39;p&#39;])))
+                self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))], *para))
+                self.m_fit_arr += list(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))])
+                self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))]), int(i)))
+            else:
+                self.p_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.m_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.n_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;n&#39;]))
+            None
+
+
+        grid_x, grid_y = np.mgrid[self.min_p:self.max_p:100j, self.min_n:self.max_n:100j]
+        grid_z = scipy.interpolate.griddata((self.p_fit_arr, self.n_fit_arr), self.m_fit_arr, (grid_x, grid_y), method=&#39;linear&#39;, fill_value=eps)
+
+        return grid_x, grid_y, grid_z
+
+    def p_ex(self, m, p):
+        import scipy
+        popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
+        return popt
+
+def load_comp(data_dir = &#39;/data&#39;):
+    &#39;&#39;&#39;
+    :param data_dir:
+    :return dict:
+
+    ./data_dir
+        |-rpm0.h5
+        |-rpm1.h5
+        :
+        |-rpmN.h5
+
+    rpm0.h5
+        |-m: [...]
+        |-p: [...]
+        |-n: [...]
+        |-etha: [...]
+    &#39;&#39;&#39;
+
+    import h5py
+    import os
+
+    #todo: fit p/m per rpm for extrapol
+    files = os.listdir(data_dir)
+    DataL = {}
+    for i in files:
+        try:
+            DataL |= {i[0:-3]: h5py.File(data_dir + &#39;/&#39; + i, &#39;r&#39;)}
+        except:
+            print(i + &#39; not loaded&#39;)
+    Data={}
+    for i in DataL.keys():
+        if i != &#39;Surge&#39;:
+            Data |= {i:{}}
+            Data[i] |= {&#39;m&#39;: []}
+            Data[i] |= {&#39;p&#39;: []}
+            Data[i] |= {&#39;n&#39;: []}
+            Data[i] |= {&#39;etha&#39;: []}
+            for j in range(len(DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;domain_data&#39;])):
+                Data[i][&#39;m&#39;] += DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;domain_data&#39;][j][0],
+                Data[i][&#39;p&#39;] += DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;codomain_data&#39;][j][0],
+                Data[i][&#39;etha&#39;] += DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;codomain_data&#39;][j][1],
+                Data[i][&#39;n&#39;] += int(i),
+    return Data
+
+def p_fit(m, p0, p1, p2):
+    # p=p0-p1*np.exp(m+p2)
+    p=p0*m**(p1)+p2
+    return p</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="POSST.gasflow.compressor.load_comp"><code class="name flex">
+<span>def <span class="ident">load_comp</span></span>(<span>data_dir='/data')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param data_dir:
+:return dict:</p>
+<p>./data_dir
+|-rpm0.h5
+|-rpm1.h5
+:
+|-rpmN.h5</p>
+<p>rpm0.h5
+|-m: [&hellip;]
+|-p: [&hellip;]
+|-n: [&hellip;]
+|-etha: [&hellip;]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_comp(data_dir = &#39;/data&#39;):
+    &#39;&#39;&#39;
+    :param data_dir:
+    :return dict:
+
+    ./data_dir
+        |-rpm0.h5
+        |-rpm1.h5
+        :
+        |-rpmN.h5
+
+    rpm0.h5
+        |-m: [...]
+        |-p: [...]
+        |-n: [...]
+        |-etha: [...]
+    &#39;&#39;&#39;
+
+    import h5py
+    import os
+
+    #todo: fit p/m per rpm for extrapol
+    files = os.listdir(data_dir)
+    DataL = {}
+    for i in files:
+        try:
+            DataL |= {i[0:-3]: h5py.File(data_dir + &#39;/&#39; + i, &#39;r&#39;)}
+        except:
+            print(i + &#39; not loaded&#39;)
+    Data={}
+    for i in DataL.keys():
+        if i != &#39;Surge&#39;:
+            Data |= {i:{}}
+            Data[i] |= {&#39;m&#39;: []}
+            Data[i] |= {&#39;p&#39;: []}
+            Data[i] |= {&#39;n&#39;: []}
+            Data[i] |= {&#39;etha&#39;: []}
+            for j in range(len(DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;domain_data&#39;])):
+                Data[i][&#39;m&#39;] += DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;domain_data&#39;][j][0],
+                Data[i][&#39;p&#39;] += DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;codomain_data&#39;][j][0],
+                Data[i][&#39;etha&#39;] += DataL[i][&#39;data&#39;][&#39;submap_0&#39;][&#39;codomain_data&#39;][j][1],
+                Data[i][&#39;n&#39;] += int(i),
+    return Data</code></pre>
+</details>
+</dd>
+<dt id="POSST.gasflow.compressor.p_fit"><code class="name flex">
+<span>def <span class="ident">p_fit</span></span>(<span>m, p0, p1, p2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def p_fit(m, p0, p1, p2):
+    # p=p0-p1*np.exp(m+p2)
+    p=p0*m**(p1)+p2
+    return p</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="POSST.gasflow.compressor.interp_Comp_m"><code class="flex name class">
+<span>class <span class="ident">interp_Comp_m</span></span>
+<span>(</span><span>ddir='./data')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class interp_Comp_m():
+    def __init__(self, ddir=&#39;./data&#39;):
+        import scipy
+        self.data_raw = load_comp(data_dir=ddir)
+        self.data_raw |= {&#39;0&#39;: {&#39;etha&#39;: [1], &#39;m&#39;:[eps], &#39;p&#39;:[1.], &#39;n&#39;:[0]}}
+        self.p_grid, self.n_grid, self.m_grid = self.grid_calc()
+        self.interp = scipy.interpolate.RegularGridInterpolator((self.p_grid[:,0], self.n_grid[0,:]), self.m_grid)
+
+    def __call__(self, n, p_ratio):
+        self.p_clip = np.clip(p_ratio, self.min_p, self.max_p)
+        self.n_clip = np.clip(n, self.min_n, self.max_n)
+        self.m = self.interp((self.p_clip, self.n_clip))
+        return self.m
+
+    def grid_calc(self):
+        import numpy as np
+        import scipy
+        import copy
+        self.m_ori= [0.]
+        self.p_ori= [1]
+        self.n_ori= [0.]
+
+        for i in self.data_raw.keys():
+            if i != &#39;Surge&#39;:
+                self.m_ori += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.p_ori += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.n_ori += list(np.full(len(self.data_raw[i][&#39;n&#39;]), int(i)))
+
+        self.p_ori = np.array(self.p_ori)
+        self.m_ori = np.array(self.m_ori)
+        self.n_ori = np.array(self.n_ori)
+
+        self.max_m = self.m_ori.max()
+        self.min_m = self.m_ori.min()
+        self.max_n = self.n_ori.max()
+        self.min_n = self.n_ori.min()
+        self.max_p = self.p_ori.max()
+        self.min_p = self.p_ori.min()
+
+        self.p_fit_arr = [1.]
+        self.m_fit_arr = [eps]
+        self.n_fit_arr = [0.]
+        for i in self.data_raw.keys():
+            if i != &#39;0&#39;:
+                self.m_fit = np.linspace(self.min_m,self.max_m,100)
+                para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i][&#39;m&#39;])),
+                               p=copy.deepcopy(list(self.data_raw[i][&#39;p&#39;])))
+                self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))], *para))
+                self.m_fit_arr += list(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))])
+                self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))]), int(i)))
+            else:
+                self.p_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.m_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.n_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;n&#39;]))
+            None
+
+
+        grid_x, grid_y = np.mgrid[self.min_p:self.max_p:100j, self.min_n:self.max_n:100j]
+        grid_z = scipy.interpolate.griddata((self.p_fit_arr, self.n_fit_arr), self.m_fit_arr, (grid_x, grid_y), method=&#39;linear&#39;, fill_value=eps)
+
+        return grid_x, grid_y, grid_z
+
+    def p_ex(self, m, p):
+        import scipy
+        popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
+        return popt</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="POSST.gasflow.compressor.interp_Comp_m.grid_calc"><code class="name flex">
+<span>def <span class="ident">grid_calc</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def grid_calc(self):
+    import numpy as np
+    import scipy
+    import copy
+    self.m_ori= [0.]
+    self.p_ori= [1]
+    self.n_ori= [0.]
+
+    for i in self.data_raw.keys():
+        if i != &#39;Surge&#39;:
+            self.m_ori += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+            self.p_ori += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+            self.n_ori += list(np.full(len(self.data_raw[i][&#39;n&#39;]), int(i)))
+
+    self.p_ori = np.array(self.p_ori)
+    self.m_ori = np.array(self.m_ori)
+    self.n_ori = np.array(self.n_ori)
+
+    self.max_m = self.m_ori.max()
+    self.min_m = self.m_ori.min()
+    self.max_n = self.n_ori.max()
+    self.min_n = self.n_ori.min()
+    self.max_p = self.p_ori.max()
+    self.min_p = self.p_ori.min()
+
+    self.p_fit_arr = [1.]
+    self.m_fit_arr = [eps]
+    self.n_fit_arr = [0.]
+    for i in self.data_raw.keys():
+        if i != &#39;0&#39;:
+            self.m_fit = np.linspace(self.min_m,self.max_m,100)
+            para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i][&#39;m&#39;])),
+                           p=copy.deepcopy(list(self.data_raw[i][&#39;p&#39;])))
+            self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))], *para))
+            self.m_fit_arr += list(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))])
+            self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit &lt; max(self.data_raw[i][&#39;m&#39;]))]), int(i)))
+        else:
+            self.p_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+            self.m_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+            self.n_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;n&#39;]))
+        None
+
+
+    grid_x, grid_y = np.mgrid[self.min_p:self.max_p:100j, self.min_n:self.max_n:100j]
+    grid_z = scipy.interpolate.griddata((self.p_fit_arr, self.n_fit_arr), self.m_fit_arr, (grid_x, grid_y), method=&#39;linear&#39;, fill_value=eps)
+
+    return grid_x, grid_y, grid_z</code></pre>
+</details>
+</dd>
+<dt id="POSST.gasflow.compressor.interp_Comp_m.p_ex"><code class="name flex">
+<span>def <span class="ident">p_ex</span></span>(<span>self, m, p)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def p_ex(self, m, p):
+    import scipy
+    popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
+    return popt</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="POSST.gasflow.compressor.interp_Comp_p"><code class="flex name class">
+<span>class <span class="ident">interp_Comp_p</span></span>
+<span>(</span><span>ddir='./data')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class interp_Comp_p():
+    def __init__(self, ddir=&#39;./data&#39;):
+        import scipy
+        self.data_raw = load_comp(data_dir=ddir)
+        self.data_raw |= {&#39;0&#39;: {&#39;etha&#39;: [1], &#39;m&#39;:[eps], &#39;p&#39;:[1.], &#39;n&#39;:[0]}}
+        self.m_grid, self.n_grid, self.p_grid = self.grid_calc()
+        self.interp = scipy.interpolate.RegularGridInterpolator((self.m_grid[:,0], self.n_grid[0,:]), self.p_grid)
+
+    def __call__(self, n, m):
+        self.m_clip = np.clip(m, self.min_m, self.max_m)
+        self.n_clip = np.clip(n, self.min_n, self.max_n)
+        self.p = self.interp((self.m_clip, self.n_clip))
+        return max(self.p, 0)
+
+    def grid_calc(self):
+        import numpy as np
+        import scipy
+        import copy
+        self.m_ori= [0.00000000]
+        self.p_ori= [1]
+        self.n_ori= [0]
+
+        for i in self.data_raw.keys():
+            if i != &#39;Surge&#39;:
+                self.m_ori += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.p_ori += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.n_ori += list(np.full(len(self.data_raw[i][&#39;n&#39;]), int(i)))
+
+        self.p_ori = np.array(self.p_ori)
+        self.m_ori = np.array(self.m_ori)
+        self.n_ori = np.array(self.n_ori)
+
+        self.max_m = self.m_ori.max()
+        self.min_m = self.m_ori.min()
+        self.max_n = self.n_ori.max()
+        self.min_n = self.n_ori.min()
+        self.max_p = self.p_ori.max()
+        self.min_p = self.p_ori.min()
+
+        self.p_fit_arr = [1.]
+        self.m_fit_arr = [eps]
+        self.n_fit_arr = [0]
+        for i in self.data_raw.keys():
+            if i != &#39;0&#39;:
+                self.m_fit = np.linspace(self.min_m,self.max_m,100)
+                para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i][&#39;m&#39;])),
+                               p=copy.deepcopy(list(self.data_raw[i][&#39;p&#39;])))
+                self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))], *para))
+                self.m_fit_arr += list(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))])
+                self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))]), int(i)))
+            else:
+                self.p_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+                self.m_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+                self.n_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;n&#39;]))
+            None
+
+
+        grid_x, grid_y = np.mgrid[self.min_m:self.max_m:100j, self.min_n:self.max_n:100j]
+        grid_z = scipy.interpolate.griddata((self.m_fit_arr, self.n_fit_arr), self.p_fit_arr, (grid_x, grid_y), method=&#39;linear&#39;, fill_value=1)
+
+        return grid_x, grid_y, grid_z
+
+    def p_ex(self, m, p):
+        import scipy
+        popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
+        return popt</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="POSST.gasflow.compressor.interp_Comp_p.grid_calc"><code class="name flex">
+<span>def <span class="ident">grid_calc</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def grid_calc(self):
+    import numpy as np
+    import scipy
+    import copy
+    self.m_ori= [0.00000000]
+    self.p_ori= [1]
+    self.n_ori= [0]
+
+    for i in self.data_raw.keys():
+        if i != &#39;Surge&#39;:
+            self.m_ori += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+            self.p_ori += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+            self.n_ori += list(np.full(len(self.data_raw[i][&#39;n&#39;]), int(i)))
+
+    self.p_ori = np.array(self.p_ori)
+    self.m_ori = np.array(self.m_ori)
+    self.n_ori = np.array(self.n_ori)
+
+    self.max_m = self.m_ori.max()
+    self.min_m = self.m_ori.min()
+    self.max_n = self.n_ori.max()
+    self.min_n = self.n_ori.min()
+    self.max_p = self.p_ori.max()
+    self.min_p = self.p_ori.min()
+
+    self.p_fit_arr = [1.]
+    self.m_fit_arr = [eps]
+    self.n_fit_arr = [0]
+    for i in self.data_raw.keys():
+        if i != &#39;0&#39;:
+            self.m_fit = np.linspace(self.min_m,self.max_m,100)
+            para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i][&#39;m&#39;])),
+                           p=copy.deepcopy(list(self.data_raw[i][&#39;p&#39;])))
+            self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))], *para))
+            self.m_fit_arr += list(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))])
+            self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit&lt;max(self.data_raw[i][&#39;m&#39;]))]), int(i)))
+        else:
+            self.p_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;p&#39;]))
+            self.m_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;m&#39;]))
+            self.n_fit_arr += copy.deepcopy(list(self.data_raw[i][&#39;n&#39;]))
+        None
+
+
+    grid_x, grid_y = np.mgrid[self.min_m:self.max_m:100j, self.min_n:self.max_n:100j]
+    grid_z = scipy.interpolate.griddata((self.m_fit_arr, self.n_fit_arr), self.p_fit_arr, (grid_x, grid_y), method=&#39;linear&#39;, fill_value=1)
+
+    return grid_x, grid_y, grid_z</code></pre>
+</details>
+</dd>
+<dt id="POSST.gasflow.compressor.interp_Comp_p.p_ex"><code class="name flex">
+<span>def <span class="ident">p_ex</span></span>(<span>self, m, p)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def p_ex(self, m, p):
+    import scipy
+    popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
+    return popt</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="POSST.gasflow.compressor.model_1"><code class="flex name class">
+<span>class <span class="ident">model_1</span></span>
+<span>(</span><span>dt, dn, cp=1000, R=237, repo_dir='./POSST')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class model_1():
+    def __init__(self, dt, dn, cp=1000, R=237, repo_dir=&#39;./POSST&#39;):
+        self.dt = dt
+        self.cp = cp
+        self.R = R
+        self.cv = cp - R
+        self.kappa = self.cp / self.cv
+
+        self.m_fit = interp_Comp_m(ddir=repo_dir + &#39;/BZ_Sim/Comp_interp/data&#39;)
+        self.m = 0
+        self.n_t = 0
+        self.dn = dn * self.dt
+        self.iteration = 0
+        self.P_ver = 0
+        self.etha = 0.7
+        self.T_out = 293.15
+
+    def __call__(self, n, p_in, p_out, T_in=293.15):
+        self.iteration += 1
+        p_ratio = p_out / p_in
+        self.n_t = np.clip(n, max(self.m_fit.min_n, self.n_t - self.dn), min(self.m_fit.max_n, self.n_t + self.dn))
+        if n &gt; 1e-7:
+            try:
+                self.m = self.m_fit(self.n_t, p_ratio)
+            except:
+                self.m = max(self.m, 1e-7)
+
+            self.P_ver = self.m * self.cp * T_in * (p_ratio ** ((self.kappa - 1) / self.kappa) - 1) / self.etha
+            self.T_out = (T_in * p_ratio ** ((self.kappa - 1) / self.kappa) - T_in) / self.etha + T_in
+        else:
+            self.m = 0
+
+        return self.m</code></pre>
+</details>
+</dd>
+<dt id="POSST.gasflow.compressor.model_2"><code class="flex name class">
+<span>class <span class="ident">model_2</span></span>
+<span>(</span><span>dt, dn, cp=1000, R=237, repo_dir='./POSST')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class model_2():
+    def __init__(self, dt, dn, cp=1000, R=237, repo_dir=&#39;./POSST&#39;):
+        self.dt = dt
+        self.cp = cp
+        self.R = R
+        self.cv = cp - R
+        self.kappa = self.cp / self.cv
+        self.dn = dn * self.dt
+        self.m = 0
+        self.n_t = 0
+
+        import restriction as res
+        self.total_p = interp_Comp_p(ddir=repo_dir + &#39;/BZ_Sim/Comp_interp/data&#39;)
+        # self.Res_Co = Restriction(A=np.pi*(2e-3)**2, dt=1e-3, R=287)
+        self.Res_Co = res.model_1(l=1.000e-03, b=1.633e+00, h=1.633e+00, R=287)
+
+        self.P_ver = 0
+        self.etha = 0.7
+        self.T_out = 293.15
+
+    def __call__(self, n, p_in, p_out, T_in=293.15):
+        self.n_t = np.clip(n, max(self.total_p.min_n, self.n_t - self.dn), min(self.total_p.max_n, self.n_t + self.dn))
+        if self.n_t &gt;= 1e-7:
+            self.m = self.Res_Co.m
+            self.m = abs(self.m)
+            self.p_comp = max(self.total_p(n=n, m=self.Res_Co.m) * p_in, p_in + 1.01)
+
+            p_ratio = self.p_comp / p_in
+            self.P_ver = self.m * self.cp * T_in * (p_ratio ** ((self.kappa - 1) / self.kappa) - 1) / self.etha
+            self.T_out = (T_in * p_ratio ** ((self.kappa - 1) / self.kappa) - T_in) / self.etha + T_in
+        else:
+            self.p_comp = p_in
+        self.Res_Co(p_in=p_in, p_out=p_out, T_in=T_in)
+
+        return self.m</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="POSST.gasflow" href="index.html">POSST.gasflow</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="POSST.gasflow.compressor.load_comp" href="#POSST.gasflow.compressor.load_comp">load_comp</a></code></li>
+<li><code><a title="POSST.gasflow.compressor.p_fit" href="#POSST.gasflow.compressor.p_fit">p_fit</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="POSST.gasflow.compressor.interp_Comp_m" href="#POSST.gasflow.compressor.interp_Comp_m">interp_Comp_m</a></code></h4>
+<ul class="">
+<li><code><a title="POSST.gasflow.compressor.interp_Comp_m.grid_calc" href="#POSST.gasflow.compressor.interp_Comp_m.grid_calc">grid_calc</a></code></li>
+<li><code><a title="POSST.gasflow.compressor.interp_Comp_m.p_ex" href="#POSST.gasflow.compressor.interp_Comp_m.p_ex">p_ex</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="POSST.gasflow.compressor.interp_Comp_p" href="#POSST.gasflow.compressor.interp_Comp_p">interp_Comp_p</a></code></h4>
+<ul class="">
+<li><code><a title="POSST.gasflow.compressor.interp_Comp_p.grid_calc" href="#POSST.gasflow.compressor.interp_Comp_p.grid_calc">grid_calc</a></code></li>
+<li><code><a title="POSST.gasflow.compressor.interp_Comp_p.p_ex" href="#POSST.gasflow.compressor.interp_Comp_p.p_ex">p_ex</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="POSST.gasflow.compressor.model_1" href="#POSST.gasflow.compressor.model_1">model_1</a></code></h4>
+</li>
+<li>
+<h4><code><a title="POSST.gasflow.compressor.model_2" href="#POSST.gasflow.compressor.model_2">model_2</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

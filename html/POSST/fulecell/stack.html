@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>POSST.fulecell.stack API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>POSST.fulecell.stack</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from src.POSST.misc import Gas
+import numpy as np
+import math
+
+class model():
+    def __init__(self, P=None, dt=1e-3):
+        self.dt = dt
+        self.P = {}
+        self.P |= {&#39;NumCell&#39;: 70}
+        self.P |= {&#39;Active_area&#39;: 190/1e4}
+        self.P |= {&#39;Channel&#39;: {&#39;Cathode&#39;: {&#39;Num&#39;: 20, &#39;h&#39;: 0.001, &#39;b&#39;: 0.002, &#39;l&#39;: 0.1},
+                               &#39;Anode&#39;: {&#39;Num&#39;: 20, &#39;h&#39;: 0.001, &#39;b&#39;: 0.002, &#39;l&#39;: 0.1}},
+                   &#39;Stack&#39;: {&#39;Thermo&#39;: {&#39;M&#39;: 10000, &#39;cp&#39;: 420, &#39;h&#39;:200}}}
+        if P != None:
+            self.P |= P
+
+        self.P[&#39;Channel&#39;][&#39;Cathode&#39;] |= {&#39;A&#39;: self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;] *
+                                              self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Cathode&#39;] |= {&#39;U&#39;: 2 * self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;] +
+                                              2 * self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Cathode&#39;] |= {&#39;V_ges&#39;: self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;Num&#39;] *
+                                                  self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;] *
+                                                  self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;] *
+                                                  self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;l&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Anode&#39;] |= {&#39;A&#39;: self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;] *
+                                            self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Anode&#39;] |= {&#39;U&#39;: 2 * self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;] +
+                                            2 * self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Anode&#39;] |= {&#39;V_ges&#39;: self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;Num&#39;] *
+                                                self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;] *
+                                                self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;] *
+                                                self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;l&#39;]}
+
+
+        self.m_calc = Gas.Massflow(self.P[&#39;NumCell&#39;])
+
+        self.pTmx_CAo = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;m_out&#39;: 0,
+                         &#39;x_H2&#39;: 0., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0.23, &#39;x_N2&#39;: 0.77}
+        self.pTmx_ANo = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;m_out&#39;: 0,
+                         &#39;x_H2&#39;: 1., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0., &#39;x_N2&#39;: 0.}
+        self.pTmx_CAi = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_in&#39;: 293.15, &#39;m_in&#39;: 0,
+                         &#39;x_H2&#39;: 0., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0.23, &#39;x_N2&#39;: 0.77}
+        self.pTmx_ANi = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_in&#39;: 293.15, &#39;m_in&#39;: 0,
+                         &#39;x_H2&#39;: 1., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0., &#39;x_N2&#39;: 0.}
+
+        self.pTm_COi = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;T_in&#39;: 293.15, &#39;m_out&#39;: 0, &#39;m_in&#39;: 0}
+        self.pTm_COo = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;T_in&#39;: 293.15, &#39;m_out&#39;: 0, &#39;m_in&#39;: 0}
+        self.gas_AN = Gas.gas_state()
+        self.gas_CA = Gas.gas_state()
+
+        self.path_func = Gas.path()
+        self.Cnat = Gas.CNat()
+
+        self.U_0 = 1.23
+        self.U_conc = 0
+        self.U_ohm = 0
+        self.U_act = 0
+        self.T_cell=self.T_stack=333.15
+        self.U_stack=self.U_0*self.P[&#39;NumCell&#39;]
+        self.I_stack =0
+        self.U_loss_stack = self.U_0*self.P[&#39;NumCell&#39;] - self.U_stack
+
+        self.Qdot_stack=0
+        self.Qdot_cool=0
+
+
+
+
+    def __call__(self, I, pTmx_ANi, pTmx_CAi, pTm_COi):
+        self.pTmx_ANi = pTmx_ANi
+        self.pTmx_CAi = pTmx_CAi
+        self.pTm_COi = self.pTm_COo = pTm_COi
+        self.I_stack = I
+
+        if self.pTmx_ANi[&#39;m_in&#39;] &gt; 0:
+            self.path_AN()
+        if self.pTmx_CAi[&#39;m_in&#39;] &gt; 0:
+            self.path_Cath()
+
+        if self.m_calc.St_H2(mH2=self.pTmx_ANi[&#39;m_in&#39;]*1000 * self.pTmx_ANi[&#39;x_H2&#39;], I=I) &lt; 1:
+            # print(&#34;Error: AN_stoich= &#34; + str(self.m_calc.St_H2(mH2=self.pTmx_ANi[&#39;m_in&#39;]*1000 * self.pTmx_ANi[&#39;x_H2&#39;], I=I)))
+            None
+
+        elif self.m_calc.St_O2(mO2=self.pTmx_CAi[&#39;m_in&#39;]*1000 * self.pTmx_CAi[&#39;x_O2&#39;], I=I) &lt; 1:
+            # print(&#34;Error: Ca_stoich= &#34; + str(self.m_calc.St_O2(mO2=self.pTmx_CAi[&#39;m_in&#39;]*1000 * self.pTmx_CAi[&#39;x_O2&#39;], I=I)))
+            None
+        else:
+            self.do_step()
+
+    def do_step(self):
+        self.T_cell = self.T_stack
+        self.U_stack = self.U_Cell() * self.P[&#39;NumCell&#39;]
+        self.Thermo()
+
+
+    def path_AN(self):
+        self.c_H2 = (self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2&#39;] / self.Cnat.M_H2) / self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;V_ges&#39;]
+
+        rho_i = []
+        xn_i = []
+        if self.pTmx_ANi[&#39;m_in&#39;] != 0:
+            nO2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_O2&#39;] / self.Cnat.M_O2
+            nN2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_N2&#39;] / self.Cnat.M_N2
+            nH2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2&#39;] / self.Cnat.M_H2
+            nH2O_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_O2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2O, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2O_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_N2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nN2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            self.gas_AN.rho = self.path_func.rho_mix(rho_i=rho_i, xn_i=xn_i)
+        else:
+            self.gas_AN.rho = 1
+        self.gas_AN.v = self.path_func.v(
+                               m_in=self.pTmx_ANi[&#39;m_in&#39;] / self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;Num&#39;] / self.P[&#39;NumCell&#39;],
+                               rho=self.gas_AN.rho,
+                               w=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;],
+                               h=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;])
+        self.gas_AN.nu = self.path_func.nu(
+                                 nu_n=self.Cnat.nu_n_H2,
+                                 T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K)
+        self.gas_AN.D_H = self.path_func.D_H(
+                                   w=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;],
+                                   h=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;])
+        self.gas_AN.Re = self.path_func.Re(
+                                 rho=self.gas_AN.rho,
+                                 v=self.gas_AN.v,
+                                 D_H=self.gas_AN.D_H,
+                                 nu=self.gas_AN.nu)
+        if self.gas_AN.Re != 0:
+            self.gas_AN.dp = self.path_func.dp(
+                                     rho=self.gas_AN.rho,
+                                     v=self.gas_AN.v,
+                                     l_ch=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;l&#39;],
+                                     D_H=self.gas_AN.D_H,
+                                     Re=self.gas_AN.Re,
+                                     zeta=0.45)
+        self.pTmx_ANo[&#39;p_in&#39;] = self.gas_AN.dp + self.pTmx_ANi[&#39;p_out&#39;]
+
+        self.pTmx_ANo[&#39;T_out&#39;] = self.T_cell
+
+        m_H2_out = self.path_func.mdot_reac_out(m_in=self.pTmx_ANi[&#39;m_in&#39;], x=self.pTmx_ANi[&#39;x_H2&#39;], I=self.I_stack, M=self.Cnat.M_H2, Ze=self.Cnat.Ze_H2, Num_Cell=self.P[&#39;NumCell&#39;])
+        m_H2O_out = self.pTmx_ANi[&#39;x_H2O&#39;] * self.pTmx_ANi[&#39;m_in&#39;] #todo. Wasserdiffusion
+        self.pTmx_ANo[&#39;m_out&#39;] = m_H2_out + m_H2O_out
+        self.pTmx_ANo[&#39;x_H2&#39;] = m_H2_out / self.pTmx_ANo[&#39;m_out&#39;]
+        self.pTmx_ANo[&#39;x_H2O&#39;] = m_H2O_out / self.pTmx_ANo[&#39;m_out&#39;]
+        self.pTmx_ANo[&#39;x_N2&#39;] = 1 - self.pTmx_ANo[&#39;x_H2&#39;] - self.pTmx_ANo[&#39;x_H2O&#39;]
+        self.pTmx_ANo[&#39;x_O2&#39;] = 0
+
+    def path_Cath(self):
+        self.c_O2 = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2 / self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;V_ges&#39;]
+        rho_i = []
+        xn_i = []
+        if self.pTmx_CAi[&#39;m_in&#39;] != 0:
+            nO2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2
+            nN2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_N2&#39;] / self.Cnat.M_N2
+            nH2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2&#39;] / self.Cnat.M_H2
+            nH2O_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_O2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2O, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2O_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_N2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nN2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            self.gas_CA.rho = self.path_func.rho_mix(rho_i=rho_i, xn_i=xn_i)
+        else:
+            self.gas_CA.rho = 1
+
+        self.gas_CA.v = self.path_func.v(
+                               m_in=self.pTmx_CAi[&#39;m_in&#39;] / self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;Num&#39;] / self.P[&#39;NumCell&#39;],
+                               rho=self.gas_CA.rho,
+                               w=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;],
+                               h=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;])
+        self.gas_CA.nu = self.path_func.nu(
+                                 nu_n=self.Cnat.nu_n_air,
+                                 T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K)
+        self.gas_CA.D_H = self.path_func.D_H(
+                                   w=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;],
+                                   h=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;])
+        self.gas_CA.Re = self.path_func.Re(
+                                 rho=self.gas_CA.rho,
+                                 v=self.gas_CA.v,
+                                 D_H=self.gas_CA.D_H,
+                                 nu=self.gas_CA.nu)
+        if self.gas_CA.Re != 0:
+            self.gas_CA.dp = self.path_func.dp(
+                                     rho=self.gas_CA.rho,
+                                     v=self.gas_CA.v,
+                                     l_ch=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;l&#39;],
+                                     D_H=self.gas_CA.D_H,
+                                     Re=self.gas_CA.Re,
+                                     zeta=0.45)
+        self.pTmx_CAo[&#39;p_in&#39;] = self.gas_CA.dp + self.pTmx_CAi[&#39;p_out&#39;]
+
+        self.pTmx_CAo[&#39;T_out&#39;] = self.T_cell
+
+        m_O2_out = self.path_func.mdot_reac_out(m_in=self.pTmx_CAi[&#39;m_in&#39;], x=self.pTmx_CAi[&#39;x_O2&#39;], I=self.I_stack, M=self.Cnat.M_O2, Ze=self.Cnat.Ze_O2, Num_Cell=self.P[&#39;NumCell&#39;])
+        m_H2O_out = self.path_func.m_H2O_prod(I=self.I_stack, Num_Cell=self.P[&#39;NumCell&#39;]) + self.pTmx_CAi[&#39;x_H2O&#39;] * self.pTmx_CAi[&#39;m_in&#39;] #todo. Wasserdiffusion
+        self.pTmx_CAo[&#39;m_out&#39;] = self.pTmx_CAi[&#39;m_in&#39;]*self.pTmx_CAi[&#39;x_N2&#39;] + m_O2_out + m_H2O_out
+        self.pTmx_CAo[&#39;x_O2&#39;] = m_O2_out / self.pTmx_CAo[&#39;m_out&#39;]
+        self.pTmx_CAo[&#39;x_H2O&#39;] = m_H2O_out / self.pTmx_CAo[&#39;m_out&#39;]
+        self.pTmx_CAo[&#39;x_N2&#39;] = 1-self.pTmx_CAo[&#39;x_O2&#39;]-self.pTmx_CAo[&#39;x_H2O&#39;]
+        self.pTmx_CAo[&#39;x_H2&#39;] = 0
+
+    def U_Cell(self):
+        A = 0.02  #0.03 V
+        C_i0 = .8 #0.8
+        i_cross = 1E-8  #1e-8 A/m^2
+        C_m = 7e-2 #7E-3
+        C_n = 3 #0.9
+        C_ohm = 2 #1
+        DM= 2e-5
+
+        nO2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2
+        nN2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_N2&#39;] / self.Cnat.M_N2
+        nH2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2&#39;] / self.Cnat.M_H2
+        nH2O_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+        xnO2_in = nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in)
+
+        nO2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_O2&#39;] / self.Cnat.M_O2
+        nN2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_N2&#39;] / self.Cnat.M_N2
+        nH2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_H2&#39;] / self.Cnat.M_H2
+        nH2O_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+        xnO2_out = nO2_out / (nO2_out + nN2_out + nH2_out + nH2O_out)
+
+        I_cd = self.I_stack/(self.P[&#39;Active_area&#39;])
+        p_mean = (self.pTmx_CAo[&#39;p_in&#39;]+self.pTmx_CAo[&#39;p_out&#39;])/2 /1e5
+        xnO2_mean = (xnO2_in + xnO2_out) / 2
+        rH_in = self.m_calc.rH( p=self.pTmx_CAo[&#39;p_in&#39;] /1e5,
+                                T=self.pTmx_CAi[&#39;T_in&#39;],
+                                m=self.pTmx_CAi[&#39;m_in&#39;],
+                                H2=self.pTmx_CAi[&#39;x_H2&#39;],
+                                H2O=self.pTmx_CAi[&#39;x_H2O&#39;],
+                                O2=self.pTmx_CAi[&#39;x_O2&#39;],
+                                N2=self.pTmx_CAi[&#39;x_N2&#39;])
+        rH_out = self.m_calc.rH(p=self.pTmx_CAi[&#39;p_out&#39;] /1e5,
+                               T=self.pTmx_CAo[&#39;T_out&#39;],
+                               m=self.pTmx_CAo[&#39;m_out&#39;],
+                               H2=self.pTmx_CAo[&#39;x_H2&#39;],
+                               H2O=self.pTmx_CAo[&#39;x_H2O&#39;],
+                               O2=self.pTmx_CAo[&#39;x_O2&#39;],
+                               N2=self.pTmx_CAo[&#39;x_N2&#39;])
+
+        self.U_act = max(0, A * np.log((I_cd + i_cross) / (C_i0 * p_mean * xnO2_mean * 2E-2 - 0.0015)))  # 2E-7 * 1E+5 wegen bar/ Pa
+
+        self.U_ohm = (I_cd + i_cross) * DM / self.Membranleitwert(rH=(rH_out+rH_in)/200) * C_ohm
+        n_emp = C_n * (0.0001340428 * np.log(p_mean / self.pTmx_CAo[&#39;p_in&#39;]*1e-5) + 0.000062629589) * (1.6574 - p_mean)
+        self.U_conc = C_m * np.exp(n_emp * (I_cd + i_cross))
+
+        return self.U_0 - self.U_act - self.U_ohm - self.U_conc
+
+    def Membranleitwert(self, rH):
+        if self.Lambda_calc(rH) &lt; 1.253:
+            Leitwert = 1e-13
+        else:
+            Leitwert = (0.005738 * self.Lambda_calc(rH) - 0.007192) * 100
+
+            Leitwert = max(Leitwert, 0.2)  # for numeric stability
+
+        return Leitwert  # S/m oder 1/Ohm*m
+
+    def Lambda_calc(self, rH):
+        # Kulikovsky, Andrei A.: Chapter 1 - Fuel cell basics. In: Kulikovsky, Andrei A. (Herausgeber): Analytical Modelling of Fuel Cells, Seiten 1 – 38. Elsevier, Amsterdam, 2010
+
+        Lambda = 0.3 + 6 * rH * (1 - math.tanh(rH - 0.5)) + 3.9 * rH ** 0.5 * (1 + math.tanh((rH - 0.89) / 0.23))
+        return Lambda
+
+    def Thermo(self):
+        if self.pTm_COi[&#39;m_in&#39;] != 0:
+            self.U_loss_stack = self.U_0 * self.P[&#39;NumCell&#39;] - self.U_stack
+            self.Qdot_stack = self.U_loss_stack * self.I_stack
+            cp_water=4200 #J/KgK
+            self.Qdot_cool = (self.P[&#39;Active_area&#39;] * ((self.P[&#39;NumCell&#39;] - 1) * 2 + 2)) * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;h&#39;] * (self.pTm_COi[&#39;T_in&#39;] - self.T_stack)
+            # self.Qdot_cool = (self.pTm_COi[&#39;m_in&#39;] * cp_water) * (self.T_stack - self.pTm_COi[&#39;T_in&#39;])
+            self.T_stack += (self.Qdot_stack + self.Qdot_cool)/(self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;M&#39;] * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;cp&#39;]) * self.dt
+            self.pTm_COo[&#39;T_out&#39;] = self.pTm_COi[&#39;T_in&#39;] - self.Qdot_cool/(self.pTm_COi[&#39;m_in&#39;] * cp_water)
+            # self.pTm_COo[&#39;T_out&#39;] = self.Qdot_cool/((self.P[&#39;Active_area&#39;] * ((self.P[&#39;NumCell&#39;] - 1) * 2 + 2)) * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;h&#39;]) + self.T_stack
+
+            self.pTm_COo[&#39;m_out&#39;] = self.pTm_COi[&#39;m_in&#39;]</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="POSST.fulecell.stack.model"><code class="flex name class">
+<span>class <span class="ident">model</span></span>
+<span>(</span><span>P=None, dt=0.001)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class model():
+    def __init__(self, P=None, dt=1e-3):
+        self.dt = dt
+        self.P = {}
+        self.P |= {&#39;NumCell&#39;: 70}
+        self.P |= {&#39;Active_area&#39;: 190/1e4}
+        self.P |= {&#39;Channel&#39;: {&#39;Cathode&#39;: {&#39;Num&#39;: 20, &#39;h&#39;: 0.001, &#39;b&#39;: 0.002, &#39;l&#39;: 0.1},
+                               &#39;Anode&#39;: {&#39;Num&#39;: 20, &#39;h&#39;: 0.001, &#39;b&#39;: 0.002, &#39;l&#39;: 0.1}},
+                   &#39;Stack&#39;: {&#39;Thermo&#39;: {&#39;M&#39;: 10000, &#39;cp&#39;: 420, &#39;h&#39;:200}}}
+        if P != None:
+            self.P |= P
+
+        self.P[&#39;Channel&#39;][&#39;Cathode&#39;] |= {&#39;A&#39;: self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;] *
+                                              self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Cathode&#39;] |= {&#39;U&#39;: 2 * self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;] +
+                                              2 * self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Cathode&#39;] |= {&#39;V_ges&#39;: self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;Num&#39;] *
+                                                  self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;] *
+                                                  self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;] *
+                                                  self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;l&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Anode&#39;] |= {&#39;A&#39;: self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;] *
+                                            self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Anode&#39;] |= {&#39;U&#39;: 2 * self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;] +
+                                            2 * self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;]}
+        self.P[&#39;Channel&#39;][&#39;Anode&#39;] |= {&#39;V_ges&#39;: self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;Num&#39;] *
+                                                self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;] *
+                                                self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;] *
+                                                self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;l&#39;]}
+
+
+        self.m_calc = Gas.Massflow(self.P[&#39;NumCell&#39;])
+
+        self.pTmx_CAo = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;m_out&#39;: 0,
+                         &#39;x_H2&#39;: 0., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0.23, &#39;x_N2&#39;: 0.77}
+        self.pTmx_ANo = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;m_out&#39;: 0,
+                         &#39;x_H2&#39;: 1., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0., &#39;x_N2&#39;: 0.}
+        self.pTmx_CAi = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_in&#39;: 293.15, &#39;m_in&#39;: 0,
+                         &#39;x_H2&#39;: 0., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0.23, &#39;x_N2&#39;: 0.77}
+        self.pTmx_ANi = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_in&#39;: 293.15, &#39;m_in&#39;: 0,
+                         &#39;x_H2&#39;: 1., &#39;x_H2O&#39;: 0., &#39;x_O2&#39;: 0., &#39;x_N2&#39;: 0.}
+
+        self.pTm_COi = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;T_in&#39;: 293.15, &#39;m_out&#39;: 0, &#39;m_in&#39;: 0}
+        self.pTm_COo = {&#39;p_out&#39;: 1.0135e5, &#39;p_in&#39;: 1.0135e5, &#39;T_out&#39;: 293.15, &#39;T_in&#39;: 293.15, &#39;m_out&#39;: 0, &#39;m_in&#39;: 0}
+        self.gas_AN = Gas.gas_state()
+        self.gas_CA = Gas.gas_state()
+
+        self.path_func = Gas.path()
+        self.Cnat = Gas.CNat()
+
+        self.U_0 = 1.23
+        self.U_conc = 0
+        self.U_ohm = 0
+        self.U_act = 0
+        self.T_cell=self.T_stack=333.15
+        self.U_stack=self.U_0*self.P[&#39;NumCell&#39;]
+        self.I_stack =0
+        self.U_loss_stack = self.U_0*self.P[&#39;NumCell&#39;] - self.U_stack
+
+        self.Qdot_stack=0
+        self.Qdot_cool=0
+
+
+
+
+    def __call__(self, I, pTmx_ANi, pTmx_CAi, pTm_COi):
+        self.pTmx_ANi = pTmx_ANi
+        self.pTmx_CAi = pTmx_CAi
+        self.pTm_COi = self.pTm_COo = pTm_COi
+        self.I_stack = I
+
+        if self.pTmx_ANi[&#39;m_in&#39;] &gt; 0:
+            self.path_AN()
+        if self.pTmx_CAi[&#39;m_in&#39;] &gt; 0:
+            self.path_Cath()
+
+        if self.m_calc.St_H2(mH2=self.pTmx_ANi[&#39;m_in&#39;]*1000 * self.pTmx_ANi[&#39;x_H2&#39;], I=I) &lt; 1:
+            # print(&#34;Error: AN_stoich= &#34; + str(self.m_calc.St_H2(mH2=self.pTmx_ANi[&#39;m_in&#39;]*1000 * self.pTmx_ANi[&#39;x_H2&#39;], I=I)))
+            None
+
+        elif self.m_calc.St_O2(mO2=self.pTmx_CAi[&#39;m_in&#39;]*1000 * self.pTmx_CAi[&#39;x_O2&#39;], I=I) &lt; 1:
+            # print(&#34;Error: Ca_stoich= &#34; + str(self.m_calc.St_O2(mO2=self.pTmx_CAi[&#39;m_in&#39;]*1000 * self.pTmx_CAi[&#39;x_O2&#39;], I=I)))
+            None
+        else:
+            self.do_step()
+
+    def do_step(self):
+        self.T_cell = self.T_stack
+        self.U_stack = self.U_Cell() * self.P[&#39;NumCell&#39;]
+        self.Thermo()
+
+
+    def path_AN(self):
+        self.c_H2 = (self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2&#39;] / self.Cnat.M_H2) / self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;V_ges&#39;]
+
+        rho_i = []
+        xn_i = []
+        if self.pTmx_ANi[&#39;m_in&#39;] != 0:
+            nO2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_O2&#39;] / self.Cnat.M_O2
+            nN2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_N2&#39;] / self.Cnat.M_N2
+            nH2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2&#39;] / self.Cnat.M_H2
+            nH2O_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_O2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2O, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2O_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_N2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nN2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            self.gas_AN.rho = self.path_func.rho_mix(rho_i=rho_i, xn_i=xn_i)
+        else:
+            self.gas_AN.rho = 1
+        self.gas_AN.v = self.path_func.v(
+                               m_in=self.pTmx_ANi[&#39;m_in&#39;] / self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;Num&#39;] / self.P[&#39;NumCell&#39;],
+                               rho=self.gas_AN.rho,
+                               w=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;],
+                               h=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;])
+        self.gas_AN.nu = self.path_func.nu(
+                                 nu_n=self.Cnat.nu_n_H2,
+                                 T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K)
+        self.gas_AN.D_H = self.path_func.D_H(
+                                   w=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;],
+                                   h=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;])
+        self.gas_AN.Re = self.path_func.Re(
+                                 rho=self.gas_AN.rho,
+                                 v=self.gas_AN.v,
+                                 D_H=self.gas_AN.D_H,
+                                 nu=self.gas_AN.nu)
+        if self.gas_AN.Re != 0:
+            self.gas_AN.dp = self.path_func.dp(
+                                     rho=self.gas_AN.rho,
+                                     v=self.gas_AN.v,
+                                     l_ch=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;l&#39;],
+                                     D_H=self.gas_AN.D_H,
+                                     Re=self.gas_AN.Re,
+                                     zeta=0.45)
+        self.pTmx_ANo[&#39;p_in&#39;] = self.gas_AN.dp + self.pTmx_ANi[&#39;p_out&#39;]
+
+        self.pTmx_ANo[&#39;T_out&#39;] = self.T_cell
+
+        m_H2_out = self.path_func.mdot_reac_out(m_in=self.pTmx_ANi[&#39;m_in&#39;], x=self.pTmx_ANi[&#39;x_H2&#39;], I=self.I_stack, M=self.Cnat.M_H2, Ze=self.Cnat.Ze_H2, Num_Cell=self.P[&#39;NumCell&#39;])
+        m_H2O_out = self.pTmx_ANi[&#39;x_H2O&#39;] * self.pTmx_ANi[&#39;m_in&#39;] #todo. Wasserdiffusion
+        self.pTmx_ANo[&#39;m_out&#39;] = m_H2_out + m_H2O_out
+        self.pTmx_ANo[&#39;x_H2&#39;] = m_H2_out / self.pTmx_ANo[&#39;m_out&#39;]
+        self.pTmx_ANo[&#39;x_H2O&#39;] = m_H2O_out / self.pTmx_ANo[&#39;m_out&#39;]
+        self.pTmx_ANo[&#39;x_N2&#39;] = 1 - self.pTmx_ANo[&#39;x_H2&#39;] - self.pTmx_ANo[&#39;x_H2O&#39;]
+        self.pTmx_ANo[&#39;x_O2&#39;] = 0
+
+    def path_Cath(self):
+        self.c_O2 = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2 / self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;V_ges&#39;]
+        rho_i = []
+        xn_i = []
+        if self.pTmx_CAi[&#39;m_in&#39;] != 0:
+            nO2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2
+            nN2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_N2&#39;] / self.Cnat.M_N2
+            nH2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2&#39;] / self.Cnat.M_H2
+            nH2O_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_O2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2O, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nH2O_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            rho_i += self.path_func.rho(rho_n=self.Cnat.rho_N2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+            xn_i += nN2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+            self.gas_CA.rho = self.path_func.rho_mix(rho_i=rho_i, xn_i=xn_i)
+        else:
+            self.gas_CA.rho = 1
+
+        self.gas_CA.v = self.path_func.v(
+                               m_in=self.pTmx_CAi[&#39;m_in&#39;] / self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;Num&#39;] / self.P[&#39;NumCell&#39;],
+                               rho=self.gas_CA.rho,
+                               w=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;],
+                               h=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;])
+        self.gas_CA.nu = self.path_func.nu(
+                                 nu_n=self.Cnat.nu_n_air,
+                                 T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K)
+        self.gas_CA.D_H = self.path_func.D_H(
+                                   w=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;],
+                                   h=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;])
+        self.gas_CA.Re = self.path_func.Re(
+                                 rho=self.gas_CA.rho,
+                                 v=self.gas_CA.v,
+                                 D_H=self.gas_CA.D_H,
+                                 nu=self.gas_CA.nu)
+        if self.gas_CA.Re != 0:
+            self.gas_CA.dp = self.path_func.dp(
+                                     rho=self.gas_CA.rho,
+                                     v=self.gas_CA.v,
+                                     l_ch=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;l&#39;],
+                                     D_H=self.gas_CA.D_H,
+                                     Re=self.gas_CA.Re,
+                                     zeta=0.45)
+        self.pTmx_CAo[&#39;p_in&#39;] = self.gas_CA.dp + self.pTmx_CAi[&#39;p_out&#39;]
+
+        self.pTmx_CAo[&#39;T_out&#39;] = self.T_cell
+
+        m_O2_out = self.path_func.mdot_reac_out(m_in=self.pTmx_CAi[&#39;m_in&#39;], x=self.pTmx_CAi[&#39;x_O2&#39;], I=self.I_stack, M=self.Cnat.M_O2, Ze=self.Cnat.Ze_O2, Num_Cell=self.P[&#39;NumCell&#39;])
+        m_H2O_out = self.path_func.m_H2O_prod(I=self.I_stack, Num_Cell=self.P[&#39;NumCell&#39;]) + self.pTmx_CAi[&#39;x_H2O&#39;] * self.pTmx_CAi[&#39;m_in&#39;] #todo. Wasserdiffusion
+        self.pTmx_CAo[&#39;m_out&#39;] = self.pTmx_CAi[&#39;m_in&#39;]*self.pTmx_CAi[&#39;x_N2&#39;] + m_O2_out + m_H2O_out
+        self.pTmx_CAo[&#39;x_O2&#39;] = m_O2_out / self.pTmx_CAo[&#39;m_out&#39;]
+        self.pTmx_CAo[&#39;x_H2O&#39;] = m_H2O_out / self.pTmx_CAo[&#39;m_out&#39;]
+        self.pTmx_CAo[&#39;x_N2&#39;] = 1-self.pTmx_CAo[&#39;x_O2&#39;]-self.pTmx_CAo[&#39;x_H2O&#39;]
+        self.pTmx_CAo[&#39;x_H2&#39;] = 0
+
+    def U_Cell(self):
+        A = 0.02  #0.03 V
+        C_i0 = .8 #0.8
+        i_cross = 1E-8  #1e-8 A/m^2
+        C_m = 7e-2 #7E-3
+        C_n = 3 #0.9
+        C_ohm = 2 #1
+        DM= 2e-5
+
+        nO2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2
+        nN2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_N2&#39;] / self.Cnat.M_N2
+        nH2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2&#39;] / self.Cnat.M_H2
+        nH2O_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+        xnO2_in = nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in)
+
+        nO2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_O2&#39;] / self.Cnat.M_O2
+        nN2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_N2&#39;] / self.Cnat.M_N2
+        nH2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_H2&#39;] / self.Cnat.M_H2
+        nH2O_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+        xnO2_out = nO2_out / (nO2_out + nN2_out + nH2_out + nH2O_out)
+
+        I_cd = self.I_stack/(self.P[&#39;Active_area&#39;])
+        p_mean = (self.pTmx_CAo[&#39;p_in&#39;]+self.pTmx_CAo[&#39;p_out&#39;])/2 /1e5
+        xnO2_mean = (xnO2_in + xnO2_out) / 2
+        rH_in = self.m_calc.rH( p=self.pTmx_CAo[&#39;p_in&#39;] /1e5,
+                                T=self.pTmx_CAi[&#39;T_in&#39;],
+                                m=self.pTmx_CAi[&#39;m_in&#39;],
+                                H2=self.pTmx_CAi[&#39;x_H2&#39;],
+                                H2O=self.pTmx_CAi[&#39;x_H2O&#39;],
+                                O2=self.pTmx_CAi[&#39;x_O2&#39;],
+                                N2=self.pTmx_CAi[&#39;x_N2&#39;])
+        rH_out = self.m_calc.rH(p=self.pTmx_CAi[&#39;p_out&#39;] /1e5,
+                               T=self.pTmx_CAo[&#39;T_out&#39;],
+                               m=self.pTmx_CAo[&#39;m_out&#39;],
+                               H2=self.pTmx_CAo[&#39;x_H2&#39;],
+                               H2O=self.pTmx_CAo[&#39;x_H2O&#39;],
+                               O2=self.pTmx_CAo[&#39;x_O2&#39;],
+                               N2=self.pTmx_CAo[&#39;x_N2&#39;])
+
+        self.U_act = max(0, A * np.log((I_cd + i_cross) / (C_i0 * p_mean * xnO2_mean * 2E-2 - 0.0015)))  # 2E-7 * 1E+5 wegen bar/ Pa
+
+        self.U_ohm = (I_cd + i_cross) * DM / self.Membranleitwert(rH=(rH_out+rH_in)/200) * C_ohm
+        n_emp = C_n * (0.0001340428 * np.log(p_mean / self.pTmx_CAo[&#39;p_in&#39;]*1e-5) + 0.000062629589) * (1.6574 - p_mean)
+        self.U_conc = C_m * np.exp(n_emp * (I_cd + i_cross))
+
+        return self.U_0 - self.U_act - self.U_ohm - self.U_conc
+
+    def Membranleitwert(self, rH):
+        if self.Lambda_calc(rH) &lt; 1.253:
+            Leitwert = 1e-13
+        else:
+            Leitwert = (0.005738 * self.Lambda_calc(rH) - 0.007192) * 100
+
+            Leitwert = max(Leitwert, 0.2)  # for numeric stability
+
+        return Leitwert  # S/m oder 1/Ohm*m
+
+    def Lambda_calc(self, rH):
+        # Kulikovsky, Andrei A.: Chapter 1 - Fuel cell basics. In: Kulikovsky, Andrei A. (Herausgeber): Analytical Modelling of Fuel Cells, Seiten 1 – 38. Elsevier, Amsterdam, 2010
+
+        Lambda = 0.3 + 6 * rH * (1 - math.tanh(rH - 0.5)) + 3.9 * rH ** 0.5 * (1 + math.tanh((rH - 0.89) / 0.23))
+        return Lambda
+
+    def Thermo(self):
+        if self.pTm_COi[&#39;m_in&#39;] != 0:
+            self.U_loss_stack = self.U_0 * self.P[&#39;NumCell&#39;] - self.U_stack
+            self.Qdot_stack = self.U_loss_stack * self.I_stack
+            cp_water=4200 #J/KgK
+            self.Qdot_cool = (self.P[&#39;Active_area&#39;] * ((self.P[&#39;NumCell&#39;] - 1) * 2 + 2)) * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;h&#39;] * (self.pTm_COi[&#39;T_in&#39;] - self.T_stack)
+            # self.Qdot_cool = (self.pTm_COi[&#39;m_in&#39;] * cp_water) * (self.T_stack - self.pTm_COi[&#39;T_in&#39;])
+            self.T_stack += (self.Qdot_stack + self.Qdot_cool)/(self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;M&#39;] * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;cp&#39;]) * self.dt
+            self.pTm_COo[&#39;T_out&#39;] = self.pTm_COi[&#39;T_in&#39;] - self.Qdot_cool/(self.pTm_COi[&#39;m_in&#39;] * cp_water)
+            # self.pTm_COo[&#39;T_out&#39;] = self.Qdot_cool/((self.P[&#39;Active_area&#39;] * ((self.P[&#39;NumCell&#39;] - 1) * 2 + 2)) * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;h&#39;]) + self.T_stack
+
+            self.pTm_COo[&#39;m_out&#39;] = self.pTm_COi[&#39;m_in&#39;]</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="POSST.fulecell.stack.model.Lambda_calc"><code class="name flex">
+<span>def <span class="ident">Lambda_calc</span></span>(<span>self, rH)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Lambda_calc(self, rH):
+    # Kulikovsky, Andrei A.: Chapter 1 - Fuel cell basics. In: Kulikovsky, Andrei A. (Herausgeber): Analytical Modelling of Fuel Cells, Seiten 1 – 38. Elsevier, Amsterdam, 2010
+
+    Lambda = 0.3 + 6 * rH * (1 - math.tanh(rH - 0.5)) + 3.9 * rH ** 0.5 * (1 + math.tanh((rH - 0.89) / 0.23))
+    return Lambda</code></pre>
+</details>
+</dd>
+<dt id="POSST.fulecell.stack.model.Membranleitwert"><code class="name flex">
+<span>def <span class="ident">Membranleitwert</span></span>(<span>self, rH)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Membranleitwert(self, rH):
+    if self.Lambda_calc(rH) &lt; 1.253:
+        Leitwert = 1e-13
+    else:
+        Leitwert = (0.005738 * self.Lambda_calc(rH) - 0.007192) * 100
+
+        Leitwert = max(Leitwert, 0.2)  # for numeric stability
+
+    return Leitwert  # S/m oder 1/Ohm*m</code></pre>
+</details>
+</dd>
+<dt id="POSST.fulecell.stack.model.Thermo"><code class="name flex">
+<span>def <span class="ident">Thermo</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Thermo(self):
+    if self.pTm_COi[&#39;m_in&#39;] != 0:
+        self.U_loss_stack = self.U_0 * self.P[&#39;NumCell&#39;] - self.U_stack
+        self.Qdot_stack = self.U_loss_stack * self.I_stack
+        cp_water=4200 #J/KgK
+        self.Qdot_cool = (self.P[&#39;Active_area&#39;] * ((self.P[&#39;NumCell&#39;] - 1) * 2 + 2)) * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;h&#39;] * (self.pTm_COi[&#39;T_in&#39;] - self.T_stack)
+        # self.Qdot_cool = (self.pTm_COi[&#39;m_in&#39;] * cp_water) * (self.T_stack - self.pTm_COi[&#39;T_in&#39;])
+        self.T_stack += (self.Qdot_stack + self.Qdot_cool)/(self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;M&#39;] * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;cp&#39;]) * self.dt
+        self.pTm_COo[&#39;T_out&#39;] = self.pTm_COi[&#39;T_in&#39;] - self.Qdot_cool/(self.pTm_COi[&#39;m_in&#39;] * cp_water)
+        # self.pTm_COo[&#39;T_out&#39;] = self.Qdot_cool/((self.P[&#39;Active_area&#39;] * ((self.P[&#39;NumCell&#39;] - 1) * 2 + 2)) * self.P[&#39;Stack&#39;][&#39;Thermo&#39;][&#39;h&#39;]) + self.T_stack
+
+        self.pTm_COo[&#39;m_out&#39;] = self.pTm_COi[&#39;m_in&#39;]</code></pre>
+</details>
+</dd>
+<dt id="POSST.fulecell.stack.model.U_Cell"><code class="name flex">
+<span>def <span class="ident">U_Cell</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def U_Cell(self):
+    A = 0.02  #0.03 V
+    C_i0 = .8 #0.8
+    i_cross = 1E-8  #1e-8 A/m^2
+    C_m = 7e-2 #7E-3
+    C_n = 3 #0.9
+    C_ohm = 2 #1
+    DM= 2e-5
+
+    nO2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2
+    nN2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_N2&#39;] / self.Cnat.M_N2
+    nH2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2&#39;] / self.Cnat.M_H2
+    nH2O_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+    xnO2_in = nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in)
+
+    nO2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_O2&#39;] / self.Cnat.M_O2
+    nN2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_N2&#39;] / self.Cnat.M_N2
+    nH2_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_H2&#39;] / self.Cnat.M_H2
+    nH2O_out = self.pTmx_CAo[&#39;m_out&#39;] * self.pTmx_CAo[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+    xnO2_out = nO2_out / (nO2_out + nN2_out + nH2_out + nH2O_out)
+
+    I_cd = self.I_stack/(self.P[&#39;Active_area&#39;])
+    p_mean = (self.pTmx_CAo[&#39;p_in&#39;]+self.pTmx_CAo[&#39;p_out&#39;])/2 /1e5
+    xnO2_mean = (xnO2_in + xnO2_out) / 2
+    rH_in = self.m_calc.rH( p=self.pTmx_CAo[&#39;p_in&#39;] /1e5,
+                            T=self.pTmx_CAi[&#39;T_in&#39;],
+                            m=self.pTmx_CAi[&#39;m_in&#39;],
+                            H2=self.pTmx_CAi[&#39;x_H2&#39;],
+                            H2O=self.pTmx_CAi[&#39;x_H2O&#39;],
+                            O2=self.pTmx_CAi[&#39;x_O2&#39;],
+                            N2=self.pTmx_CAi[&#39;x_N2&#39;])
+    rH_out = self.m_calc.rH(p=self.pTmx_CAi[&#39;p_out&#39;] /1e5,
+                           T=self.pTmx_CAo[&#39;T_out&#39;],
+                           m=self.pTmx_CAo[&#39;m_out&#39;],
+                           H2=self.pTmx_CAo[&#39;x_H2&#39;],
+                           H2O=self.pTmx_CAo[&#39;x_H2O&#39;],
+                           O2=self.pTmx_CAo[&#39;x_O2&#39;],
+                           N2=self.pTmx_CAo[&#39;x_N2&#39;])
+
+    self.U_act = max(0, A * np.log((I_cd + i_cross) / (C_i0 * p_mean * xnO2_mean * 2E-2 - 0.0015)))  # 2E-7 * 1E+5 wegen bar/ Pa
+
+    self.U_ohm = (I_cd + i_cross) * DM / self.Membranleitwert(rH=(rH_out+rH_in)/200) * C_ohm
+    n_emp = C_n * (0.0001340428 * np.log(p_mean / self.pTmx_CAo[&#39;p_in&#39;]*1e-5) + 0.000062629589) * (1.6574 - p_mean)
+    self.U_conc = C_m * np.exp(n_emp * (I_cd + i_cross))
+
+    return self.U_0 - self.U_act - self.U_ohm - self.U_conc</code></pre>
+</details>
+</dd>
+<dt id="POSST.fulecell.stack.model.do_step"><code class="name flex">
+<span>def <span class="ident">do_step</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def do_step(self):
+    self.T_cell = self.T_stack
+    self.U_stack = self.U_Cell() * self.P[&#39;NumCell&#39;]
+    self.Thermo()</code></pre>
+</details>
+</dd>
+<dt id="POSST.fulecell.stack.model.path_AN"><code class="name flex">
+<span>def <span class="ident">path_AN</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def path_AN(self):
+    self.c_H2 = (self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2&#39;] / self.Cnat.M_H2) / self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;V_ges&#39;]
+
+    rho_i = []
+    xn_i = []
+    if self.pTmx_ANi[&#39;m_in&#39;] != 0:
+        nO2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_O2&#39;] / self.Cnat.M_O2
+        nN2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_N2&#39;] / self.Cnat.M_N2
+        nH2_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2&#39;] / self.Cnat.M_H2
+        nH2O_in = self.pTmx_ANi[&#39;m_in&#39;] * self.pTmx_ANi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_O2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nH2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2O, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nH2O_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_N2, p=self.pTmx_ANi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nN2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        self.gas_AN.rho = self.path_func.rho_mix(rho_i=rho_i, xn_i=xn_i)
+    else:
+        self.gas_AN.rho = 1
+    self.gas_AN.v = self.path_func.v(
+                           m_in=self.pTmx_ANi[&#39;m_in&#39;] / self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;Num&#39;] / self.P[&#39;NumCell&#39;],
+                           rho=self.gas_AN.rho,
+                           w=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;],
+                           h=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;])
+    self.gas_AN.nu = self.path_func.nu(
+                             nu_n=self.Cnat.nu_n_H2,
+                             T_in=self.pTmx_ANi[&#39;T_in&#39;], T_n=self.Cnat.T_0K)
+    self.gas_AN.D_H = self.path_func.D_H(
+                               w=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;b&#39;],
+                               h=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;h&#39;])
+    self.gas_AN.Re = self.path_func.Re(
+                             rho=self.gas_AN.rho,
+                             v=self.gas_AN.v,
+                             D_H=self.gas_AN.D_H,
+                             nu=self.gas_AN.nu)
+    if self.gas_AN.Re != 0:
+        self.gas_AN.dp = self.path_func.dp(
+                                 rho=self.gas_AN.rho,
+                                 v=self.gas_AN.v,
+                                 l_ch=self.P[&#39;Channel&#39;][&#39;Anode&#39;][&#39;l&#39;],
+                                 D_H=self.gas_AN.D_H,
+                                 Re=self.gas_AN.Re,
+                                 zeta=0.45)
+    self.pTmx_ANo[&#39;p_in&#39;] = self.gas_AN.dp + self.pTmx_ANi[&#39;p_out&#39;]
+
+    self.pTmx_ANo[&#39;T_out&#39;] = self.T_cell
+
+    m_H2_out = self.path_func.mdot_reac_out(m_in=self.pTmx_ANi[&#39;m_in&#39;], x=self.pTmx_ANi[&#39;x_H2&#39;], I=self.I_stack, M=self.Cnat.M_H2, Ze=self.Cnat.Ze_H2, Num_Cell=self.P[&#39;NumCell&#39;])
+    m_H2O_out = self.pTmx_ANi[&#39;x_H2O&#39;] * self.pTmx_ANi[&#39;m_in&#39;] #todo. Wasserdiffusion
+    self.pTmx_ANo[&#39;m_out&#39;] = m_H2_out + m_H2O_out
+    self.pTmx_ANo[&#39;x_H2&#39;] = m_H2_out / self.pTmx_ANo[&#39;m_out&#39;]
+    self.pTmx_ANo[&#39;x_H2O&#39;] = m_H2O_out / self.pTmx_ANo[&#39;m_out&#39;]
+    self.pTmx_ANo[&#39;x_N2&#39;] = 1 - self.pTmx_ANo[&#39;x_H2&#39;] - self.pTmx_ANo[&#39;x_H2O&#39;]
+    self.pTmx_ANo[&#39;x_O2&#39;] = 0</code></pre>
+</details>
+</dd>
+<dt id="POSST.fulecell.stack.model.path_Cath"><code class="name flex">
+<span>def <span class="ident">path_Cath</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def path_Cath(self):
+    self.c_O2 = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2 / self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;V_ges&#39;]
+    rho_i = []
+    xn_i = []
+    if self.pTmx_CAi[&#39;m_in&#39;] != 0:
+        nO2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_O2&#39;] / self.Cnat.M_O2
+        nN2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_N2&#39;] / self.Cnat.M_N2
+        nH2_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2&#39;] / self.Cnat.M_H2
+        nH2O_in = self.pTmx_CAi[&#39;m_in&#39;] * self.pTmx_CAi[&#39;x_H2O&#39;] / self.Cnat.M_H2O
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_O2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nO2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nH2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_H2O, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nH2O_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        rho_i += self.path_func.rho(rho_n=self.Cnat.rho_N2, p=self.pTmx_CAi[&#39;p_out&#39;], p_n=self.Cnat.p_atm, T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K),
+        xn_i += nN2_in / (nO2_in + nN2_in + nH2_in + nH2O_in),
+
+        self.gas_CA.rho = self.path_func.rho_mix(rho_i=rho_i, xn_i=xn_i)
+    else:
+        self.gas_CA.rho = 1
+
+    self.gas_CA.v = self.path_func.v(
+                           m_in=self.pTmx_CAi[&#39;m_in&#39;] / self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;Num&#39;] / self.P[&#39;NumCell&#39;],
+                           rho=self.gas_CA.rho,
+                           w=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;],
+                           h=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;])
+    self.gas_CA.nu = self.path_func.nu(
+                             nu_n=self.Cnat.nu_n_air,
+                             T_in=self.pTmx_CAi[&#39;T_in&#39;], T_n=self.Cnat.T_0K)
+    self.gas_CA.D_H = self.path_func.D_H(
+                               w=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;b&#39;],
+                               h=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;h&#39;])
+    self.gas_CA.Re = self.path_func.Re(
+                             rho=self.gas_CA.rho,
+                             v=self.gas_CA.v,
+                             D_H=self.gas_CA.D_H,
+                             nu=self.gas_CA.nu)
+    if self.gas_CA.Re != 0:
+        self.gas_CA.dp = self.path_func.dp(
+                                 rho=self.gas_CA.rho,
+                                 v=self.gas_CA.v,
+                                 l_ch=self.P[&#39;Channel&#39;][&#39;Cathode&#39;][&#39;l&#39;],
+                                 D_H=self.gas_CA.D_H,
+                                 Re=self.gas_CA.Re,
+                                 zeta=0.45)
+    self.pTmx_CAo[&#39;p_in&#39;] = self.gas_CA.dp + self.pTmx_CAi[&#39;p_out&#39;]
+
+    self.pTmx_CAo[&#39;T_out&#39;] = self.T_cell
+
+    m_O2_out = self.path_func.mdot_reac_out(m_in=self.pTmx_CAi[&#39;m_in&#39;], x=self.pTmx_CAi[&#39;x_O2&#39;], I=self.I_stack, M=self.Cnat.M_O2, Ze=self.Cnat.Ze_O2, Num_Cell=self.P[&#39;NumCell&#39;])
+    m_H2O_out = self.path_func.m_H2O_prod(I=self.I_stack, Num_Cell=self.P[&#39;NumCell&#39;]) + self.pTmx_CAi[&#39;x_H2O&#39;] * self.pTmx_CAi[&#39;m_in&#39;] #todo. Wasserdiffusion
+    self.pTmx_CAo[&#39;m_out&#39;] = self.pTmx_CAi[&#39;m_in&#39;]*self.pTmx_CAi[&#39;x_N2&#39;] + m_O2_out + m_H2O_out
+    self.pTmx_CAo[&#39;x_O2&#39;] = m_O2_out / self.pTmx_CAo[&#39;m_out&#39;]
+    self.pTmx_CAo[&#39;x_H2O&#39;] = m_H2O_out / self.pTmx_CAo[&#39;m_out&#39;]
+    self.pTmx_CAo[&#39;x_N2&#39;] = 1-self.pTmx_CAo[&#39;x_O2&#39;]-self.pTmx_CAo[&#39;x_H2O&#39;]
+    self.pTmx_CAo[&#39;x_H2&#39;] = 0</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="POSST.fulecell" href="index.html">POSST.fulecell</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="POSST.fulecell.stack.model" href="#POSST.fulecell.stack.model">model</a></code></h4>
+<ul class="two-column">
+<li><code><a title="POSST.fulecell.stack.model.Lambda_calc" href="#POSST.fulecell.stack.model.Lambda_calc">Lambda_calc</a></code></li>
+<li><code><a title="POSST.fulecell.stack.model.Membranleitwert" href="#POSST.fulecell.stack.model.Membranleitwert">Membranleitwert</a></code></li>
+<li><code><a title="POSST.fulecell.stack.model.Thermo" href="#POSST.fulecell.stack.model.Thermo">Thermo</a></code></li>
+<li><code><a title="POSST.fulecell.stack.model.U_Cell" href="#POSST.fulecell.stack.model.U_Cell">U_Cell</a></code></li>
+<li><code><a title="POSST.fulecell.stack.model.do_step" href="#POSST.fulecell.stack.model.do_step">do_step</a></code></li>
+<li><code><a title="POSST.fulecell.stack.model.path_AN" href="#POSST.fulecell.stack.model.path_AN">path_AN</a></code></li>
+<li><code><a title="POSST.fulecell.stack.model.path_Cath" href="#POSST.fulecell.stack.model.path_Cath">path_Cath</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
