@@ -206,9 +206,12 @@ class interp_Comp_m():
         return popt
 
 def load_comp(data_dir = '/data'):
-    '''
-    :param data_dir:
-    :return dict:
+    """
+\\
+    Args:
+        data_dir
+    Returns:
+        dict
 
     ./data_dir
         |-rpm0.h5
@@ -221,7 +224,7 @@ def load_comp(data_dir = '/data'):
         |-p: [...]
         |-n: [...]
         |-etha: [...]
-    '''
+    """
 
     import h5py
     import os

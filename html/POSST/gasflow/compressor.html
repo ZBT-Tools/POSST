@@ -234,9 +234,12 @@ class interp_Comp_m():
         return popt
 
 def load_comp(data_dir = &#39;/data&#39;):
-    &#39;&#39;&#39;
-    :param data_dir:
-    :return dict:
+    &#34;&#34;&#34;
+\\
+    Args:
+        data_dir
+    Returns:
+        dict
 
     ./data_dir
         |-rpm0.h5
@@ -249,7 +252,7 @@ def load_comp(data_dir = &#39;/data&#39;):
         |-p: [...]
         |-n: [...]
         |-etha: [...]
-    &#39;&#39;&#39;
+    &#34;&#34;&#34;
 
     import h5py
     import os
@@ -294,26 +297,34 @@ def p_fit(m, p0, p1, p2):
 <span>def <span class="ident">load_comp</span></span>(<span>data_dir='/data')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>:param data_dir:
-:return dict:</p>
-<p>./data_dir
-|-rpm0.h5
-|-rpm1.h5
-:
-|-rpmN.h5</p>
-<p>rpm0.h5
-|-m: [&hellip;]
-|-p: [&hellip;]
-|-n: [&hellip;]
-|-etha: [&hellip;]</p></div>
+<div class="desc"><p>\
+Args:
+data_dir
+Returns:
+dict</p>
+<pre><code>./data_dir
+    |-rpm0.h5
+    |-rpm1.h5
+    :
+    |-rpmN.h5
+
+rpm0.h5
+    |-m: [...]
+    |-p: [...]
+    |-n: [...]
+    |-etha: [...]
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def load_comp(data_dir = &#39;/data&#39;):
-    &#39;&#39;&#39;
-    :param data_dir:
-    :return dict:
+    &#34;&#34;&#34;
+\\
+    Args:
+        data_dir
+    Returns:
+        dict
 
     ./data_dir
         |-rpm0.h5
@@ -326,7 +337,7 @@ def p_fit(m, p0, p1, p2):
         |-p: [...]
         |-n: [...]
         |-etha: [...]
-    &#39;&#39;&#39;
+    &#34;&#34;&#34;
 
     import h5py
     import os
