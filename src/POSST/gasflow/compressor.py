@@ -14,7 +14,7 @@ class model_1():
         m=massflow
     Description:
         
-        Model for fitting curve 2 
+        Model for fitting curve 2  
         $m = y \cdot x$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
@@ -65,7 +65,7 @@ class model_2():
         m=massflow
     Description:
         
-        Model for fitting curve 2 
+        Model for fitting curve 2  
         $m = y \cdot x$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
