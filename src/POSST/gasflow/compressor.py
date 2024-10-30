@@ -15,7 +15,7 @@ class model_1():
     Description:
         
         **Model for fitting curve 1**  
-        $$ m = y\cdotx$$
+        $ m = y\cdotx$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
@@ -66,7 +66,7 @@ class model_2():
     Description:
         
         **Model for fitting curve 2**  
-        $$ m = y\cdotx$$
+        $ m = y\cdotx$
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         self.dt = dt
