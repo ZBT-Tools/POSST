@@ -1,3 +1,6 @@
+
+
+
 # Python Open Source Simulation Tool (POSST):
 
 **Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**
@@ -51,10 +54,8 @@ https://www.energy-system-solutions.de/simulation. Feel free to test the simulat
 
 ## Installation Guide
 ### Installation with pip
+NOT AVAILABLE YET!
 
-To install the package using pip, run the following command:
-    
-    pip install PSSO
 
 ### Installation with GIT
 
