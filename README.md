@@ -79,4 +79,4 @@ To reduce a 2-D + 1-D spatially resolved fuel cell model to a voltage model, sev
 ---
 
 ### Doku
-[>Docs](./html/index.html)
+[>Docs](https://zbt-tools.github.io/POSST/html/index.html)
