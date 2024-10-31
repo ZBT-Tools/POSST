@@ -57,9 +57,23 @@ T = current Temperature
 <h2 id="description">Description</h2>
 <p>Model to define Volumne of Container and Calculation of states.
 </p>
-<h3 id="calculation">Calculation</h3>
-<p>$ \frac{\delta p}{\delta t} = $</p>
-<p>Initialisierung der Leitungen</p></div>
+<h3 id="calculation"><strong>Calculation</strong></h3>
+<ol>
+<li>Change of pressure in Reservoir
+</li>
+</ol>
+<p><span><span class="MathJax_Preview">\frac{\delta p}{\delta t} = \frac{\kappa \cdot R}{V} \cdot
+\left(\dot{m}_{in} \cdot T_{in} - \dot{m}_{out} \cdot T_{out}\right)</span><script type="math/tex; mode=display">\frac{\delta p}{\delta t} = \frac{\kappa \cdot R}{V} \cdot
+\left(\dot{m}_{in} \cdot T_{in} - \dot{m}_{out} \cdot T_{out}\right)</script></span></p>
+<ol>
+<li>Change of temperature in Reservoir
+</li>
+</ol>
+<p><span><span class="MathJax_Preview">\frac{\delta T}{\delta t} = \frac{T \cdot R}{p \cdot V \cdot c_v} \cdot
+\left(c_p \cdot \dot{m}_{in} \cdot T_{in} -
+c_p \cdot \dot{m}_{out} \cdot T_{out} - c_v \cdot \left(\dot{m}_{in}-\dot{m}_{out}\right)\right)</span><script type="math/tex; mode=display">\frac{\delta T}{\delta t} = \frac{T \cdot R}{p \cdot V \cdot c_v} \cdot
+\left(c_p \cdot \dot{m}_{in} \cdot T_{in} -
+c_p \cdot \dot{m}_{out} \cdot T_{out} - c_v \cdot \left(\dot{m}_{in}-\dot{m}_{out}\right)\right)</script></span></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -82,12 +96,18 @@ T = current Temperature
         T = current Temperature
     ## Description  
     Model to define Volumne of Container and Calculation of states.  
-    ### Calculation  
-    $ \frac{\delta p}{\delta t} = $
+    ### **Calculation**
+    1. Change of pressure in Reservoir  
+    
+    $$\frac{\delta p}{\delta t} = \frac{\kappa \cdot R}{V} \cdot  \left(\dot{m}_{in} \cdot T_{in} - \dot{m}_{out} \cdot T_{out}\right)$$
+    
+    2. Change of temperature in Reservoir  
+    
+    $$\frac{\delta T}{\delta t} = \frac{T \cdot R}{p \cdot V \cdot c_v} \cdot  \left(c_p \cdot \dot{m}_{in} \cdot T_{in} - 
+                                        c_p \cdot \dot{m}_{out} \cdot T_{out} - c_v \cdot \left(\dot{m}_{in}-\dot{m}_{out}\right)\right)$$
     &#34;&#34;&#34;
     
     def __init__(self, name = &#34;Pipe&#34;, V=0.001, T_0 = 293.15, p_0 = 1.0135e5, cp = 1000 ,R =237, dt=1e-3): # 8.314):
-        &#34;&#34;&#34;Initialisierung der Leitungen&#34;&#34;&#34;
         self.name = name
         self.V = V
         self.cp= cp
