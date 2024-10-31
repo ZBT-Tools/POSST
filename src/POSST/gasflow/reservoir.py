@@ -3,31 +3,32 @@ class model_1():
     r"""
     ## Arguments
     
-    
-        V = volumne of container element  
+        V = volume of container element  
         T_0 = start temperature   
         p_0 = start pressure  
         cp = specific heat capacity  
         R = gas constant  
         dt = time step  
+    
     ## Returns
-        
     
         p = current pressure
         T = current Temperature
+    
     ## Description  
-    Model to define Volumne of Container and Calculation of states.  
+    Model to define Volume of Container and Calculation of states.  
+    
     ### Calculation
+    
     1. Change of pressure in Reservoir  
     
-    $$\frac{\delta p}{\delta t} = \frac{\kappa \cdot R}{V} \cdot  \left(\dot{m}_{in} \cdot T_{in} - \dot{m}_{out} \cdot T_{out}\right)$$
+        $$\frac{\delta p}{\delta t} = \frac{\kappa \cdot R}{V} \cdot  \left(\dot{m}_{\text{in}} \cdot T_{\text{in}} - \dot{m}_{\text{out}} \cdot T_{\text{out}}\right)$$
     
     2. Change of temperature in Reservoir  
     
-    $$\frac{\delta T}{\delta t} = \frac{T \cdot R}{p \cdot V \cdot c_v} \cdot  \left(c_p \cdot \dot{m}_{in} \cdot T_{in} - 
-                                        c_p \cdot \dot{m}_{out} \cdot T_{out} - c_v \cdot \left(\dot{m}_{in}-\dot{m}_{out}\right)\right)$$
-    """
-    
+        $$\frac{\delta T}{\delta t} = \frac{T \cdot R}{p \cdot V \cdot c_v} \cdot  \left(c_p \cdot \dot{m}_{\text{in}} \cdot T_{\text{in}} - 
+                                            c_p \cdot \dot{m}_{\text{out}} \cdot T_{\text{out}} - c_v \cdot \left(\dot{m}_{\text{in}}-\dot{m}_{\text{out}}\right)\right)$$
+    """  
     def __init__(self, name = "Pipe", V=0.001, T_0 = 293.15, p_0 = 1.0135e5, cp = 1000 ,R =237, dt=1e-3): # 8.314):
         self.name = name
         self.V = V

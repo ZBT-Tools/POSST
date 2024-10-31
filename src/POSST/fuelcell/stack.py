@@ -1,8 +1,32 @@
+
 from POSST.misc import Gas
 import numpy as np
 import math
 
 class model():
+    r"""
+    ## Arguments
+    
+       ##TODO
+    
+    ## Returns
+    
+       ##TODO
+    
+    ## Description  
+    The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model, a reduced model is implemented that omits several key features. For example, there is no segmentation along the gas paths, and the membrane does not serve as a water reservoir [1]. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.
+
+    The waste heat and stack temperatures are calculated based on stack voltage and stack current. Using the provided coolant mass flow, the resulting temperature change for both the stack and the coolant is determined by
+
+    $$dT = \frac{Q_{\text{waste}} - Q_{\text{coolant}}}{M \cdot c} \cdot dt$$
+
+    where $ Q_{\text{waste}} $ is the waste heat, $ Q_{\text{coolant}} $ is the provided coolant flow, $ M $ is the thermal mass, and $ c $ is the heat capacity of the fuel cell stack. A pressure drop is not calculated by thermal management. Additionally, the outlet temperatures of the gas flows are set to the stack temperature. This temperature change is not yet accounted for in thermal management.
+    
+    ## Reference
+
+    [1]	S. Gößling, "2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen," Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.<br>
+
+    """
     def __init__(self, P=None, dt=1e-3):
         self.dt = dt
         self.P = {}

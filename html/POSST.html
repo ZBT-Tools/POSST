@@ -48,6 +48,7 @@
             <ul>
   <li><a href="#abstract">Abstract</a></li>
   <li><a href="#keywords">Keywords</a></li>
+  <li><a href="#installation-guide">Installation Guide</a></li>
   <li><a href="#contents">Contents</a></li>
   <li><a href="#references">References</a></li>
 </ul>
@@ -74,21 +75,36 @@
                     <h1 class="modulename">
 POSST    </h1>
 
-                        <div class="docstring"><p><strong>Python Open Source Simulation Tool (POSST): Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)</strong></p>
+                        <div class="docstring"><p><strong>Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)</strong></p>
 
 <h3 id="authors">Authors:</h3>
 
-<p>Florian Dennewitz (Maintainer), Leonora Kastrati (Maintainer), Niklas Nickig (Maintainer), Matthias Bahr (Contributor)</p>
+<p>Florian Dennewitz (Maintainer)<sup>1,2</sup>, Leonora Kastrati (Maintainer)<sup>1</sup>, Niklas Nickig (Maintainer)<sup>2</sup>, Matthias Bahr (Contributor)<sup>2</sup></p>
 
 <hr />
 
 <h2 id="abstract">Abstract</h2>
 
-<p>This open-source simulation software enables real-time simulation of fuel cell system components without the use of mathematical solvers. Based on the Mean-Value-Modelling approach for black box modelling, this software is web-based and addresses common challenges of existing simulation programs, such as high costs and lack of interoperability.</p>
+<p>This open-source simulation software enables real-time simulation of fuel cell system components without the use of mathematical solvers. Based on the Mean-Value-Modelling approach for transient process modelling, this software is web-based and addresses common challenges of existing simulation programs, such as high costs and lack of interoperability.</p>
 
 <h3 id="example-of-cathode-path">Example of Cathode Path</h3>
 
+<p align="center">
+  <img src="https://zbt-tools.github.io/POSST/pic/figure1.png" alt="Overview of Cathode Path" width="500">
+</p>
+
 <h3 id="results-of-example">Results of Example</h3>
+
+<p align="center">
+  <img src="https://zbt-tools.github.io/POSST/pic/figure8.png" alt="Cathode Load Profile Simulation" width="800">
+</p>
+
+<h3 id="link-to-websimulation">Link to Websimulation</h3>
+
+<p>Here we provide a simulation environment on the Energy System Solutions Website:
+<a href="https://www.energy-system-solutions.de/simulation">https://www.energy-system-solutions.de/simulation</a>. Feel free to test the simulation and the integrated controller of the ZBT.</p>
+
+<hr />
 
 <h2 id="keywords">Keywords</h2>
 
@@ -102,11 +118,54 @@ POSST    </h1>
 
 <hr />
 
+<h2 id="installation-guide">Installation Guide</h2>
+
+<h3 id="installation-with-pip">Installation with pip</h3>
+
+<p>NOT AVAILABLE YET!</p>
+
+<h3 id="installation-with-git">Installation with GIT</h3>
+
+<p>If you prefer to install directly from the repository, follow these steps:</p>
+
+<p>Clone the Repository:</p>
+
+<pre><code>git clone https://github.com/ZBT-Tools/POSST.git
+</code></pre>
+
+<p>Navigate to the Project Directory:</p>
+
+<pre><code>cd yourPath/POSST
+</code></pre>
+
+<p>Install Required Packages: Make sure you have a virtual environment set up (optional but recommended). Then install the required packages:</p>
+
+<pre><code>pip install -r requirements.txt
+</code></pre>
+
+<p>Create Your Process: Follow the documentation in the repository to set up your process model.</p>
+
+<p>Simulate Process: Use the provided simulation tools to run your process model. Check the usage examples in the documentation for guidance.</p>
+
+<p>Additional Notes</p>
+
+<pre><code>Ensure that you have Python installed (preferably Python 3.7 or higher).
+If you encounter any issues, check the issues section of the repository for troubleshooting.
+</code></pre>
+
+<p>Feel free to reach out if you have any questions or need further assistance!</p>
+
+<hr />
+
 <h2 id="contents">Contents</h2>
 
 <h3 id="1-modelling-of-reservoirs">1. Modelling of Reservoirs</h3>
 
 <p>The reservoir model describes mass and enthalpy flow as well as temperature changes using ordinary differential equations.</p>
+
+<p align="center">
+  <img src="https://zbt-tools.github.io/POSST/pic/figure2.png" alt="Reservoir Inputs and Outputs" width="500">
+</p>
 
 <h3 id="2-modelling-of-flows">2. Modelling of Flows</h3>
 
@@ -120,7 +179,15 @@ POSST    </h1>
 
 <p>The compressor is simulated using the “rotating disk” model. A Python library generates the compressor characteristic diagram.</p>
 
+<p align="center">
+  <img src="https://zbt-tools.github.io/POSST/pic/figure3.png" alt="Compressor Model - Rotating Disk Approach" width="500">
+</p>
+
 <p>A Python library generates the compressor characteristic diagram:</p>
+
+<p align="center">
+  <img src="https://zbt-tools.github.io/POSST/pic/figure5.png" alt="Compressor Characteristic Diagram" width="500">
+</p>
 
 <h3 id="5-modelling-of-the-fuel-cell">5. Modelling of the Fuel Cell</h3>
 
@@ -140,89 +207,138 @@ POSST    </h1>
 <h3 id="contact">Contact</h3>
 
 <ul>
-<li><a href="mailto:f.dennewitz@zbt.de">Hydrogen and Fuel Cell Center (ZBT), Duisburg, Germany</a></li>
 <li><a href="mailto:florian.dennewitz@unitybox.de">Energy System Solutions (ESS), Bottrop, Germany</a></li>
+<li><a href="mailto:f.dennewitz@zbt.de">Hydrogen and Fuel Cell Center (ZBT), Duisburg, Germany</a></li>
 </ul>
-
-<hr />
 </div>
 
                         <input id="mod-POSST-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
                         <label class="view-source-button" for="mod-POSST-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="c1"># -*- coding: utf-8 -*-</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="sd">**Python Open Source Simulation Tool (POSST): Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd">### Authors:</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">Florian Dennewitz (Maintainer), Leonora Kastrati (Maintainer), Niklas Nickig (Maintainer), Matthias Bahr (Contributor)</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="sd">---</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">## Abstract</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a><span class="sd">This open-source simulation software enables real-time simulation of fuel cell system components without the use of mathematical solvers. Based on the Mean-Value-Modelling approach for black box modelling, this software is web-based and addresses common challenges of existing simulation programs, such as high costs and lack of interoperability.</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="sd">### Example of Cathode Path</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
-</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">### Results of Example</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>
-</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="sd"> </span>
-</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>
-</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="sd">## Keywords</span>
-</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="sd">- Simulation</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a><span class="sd">- Open-source</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="sd">- Python</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="sd">- Black box modelling</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="sd">- Fuel cell system</span>
-</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>
-</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="sd">---</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>
-</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">## Contents</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>
-</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="sd">### 1. Modelling of Reservoirs</span>
-</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">The reservoir model describes mass and enthalpy flow as well as temperature changes using ordinary differential equations.</span>
-</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>
-</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>
-</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>
-</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a><span class="sd">### 2. Modelling of Flows</span>
-</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a><span class="sd">Assuming incompressible flow between reservoirs, mass flow is calculated with adaptations for potential backflow.</span>
-</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>
-</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a><span class="sd">### 3. Modelling of Mixed Media</span>
-</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a><span class="sd">To calculate specific heat capacity and other properties, the gas composition is determined.</span>
-</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a>
-</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a><span class="sd">### 4. Modelling of the Compressor</span>
-</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a><span class="sd">The compressor is simulated using the “rotating disk” model. A Python library generates the compressor characteristic diagram.</span>
-</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>
-</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a>
-</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a><span class="sd">A Python library generates the compressor characteristic diagram:</span>
-</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a>
-</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>
-</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>
-</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a><span class="sd">### 5. Modelling of the Fuel Cell</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a><span class="sd">To reduce a 2-D + 1-D spatially resolved fuel cell model to a voltage model, several simplifications are necessary. By focusing only on the voltage model and ignoring certain sub-models, the complexity of the simulation can be significantly reduced while maintaining core performance characteristics relevant to voltage output.</span>
-</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>
-</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a><span class="sd">---</span>
-</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a>
-</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="sd">## References</span>
-</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a><span class="sd">[1]	Dipl.-Ing. Sebastian Zahn, &quot;Arbeitsspielaufgelöste Modellbildung und Hardware-in-the-Loop-Simulation von Pkw-Dieselmotoren mit Abgasturboaufladung,&quot; Fachbereich Elektrotechnik und Informationstechnik, Technische Universität Darmstadt, Darmstadt, 2012.&lt;br&gt;</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a><span class="sd">[2]	L. Guzzella und C. Onder, Introduction to Modeling and Control of Internal Combustion Engine Systems, 2. Aufl. Berlin, Heidelberg: Springer Berlin Heidelberg, 2009. Zugriff am: 29. Oktober 2024. [Online]. Verfügbar unter: https://link.springer.com/book/10.1007/978-3-642-10775-7&lt;br&gt;</span>
-</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a><span class="sd">[3]	P. Virtanen et al., &quot;SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python,&quot; Nature Methods, Jg. 17, S. 261–272, 2020, doi: 10.1038/s41592-019-0686-2.&lt;br&gt;</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a><span class="sd">[4]	S. Gößling, &quot;2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen,&quot; Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.&lt;br&gt;</span>
-</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a>
-</span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a>
-</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a>
-</span><span id="L-64"><a href="#L-64"><span class="linenos">64</span></a><span class="sd">---</span>
-</span><span id="L-65"><a href="#L-65"><span class="linenos">65</span></a>
-</span><span id="L-66"><a href="#L-66"><span class="linenos">66</span></a><span class="sd">### Contact</span>
-</span><span id="L-67"><a href="#L-67"><span class="linenos">67</span></a><span class="sd">- [Hydrogen and Fuel Cell Center (ZBT), Duisburg, Germany](mailto:f.dennewitz@zbt.de)</span>
-</span><span id="L-68"><a href="#L-68"><span class="linenos">68</span></a><span class="sd">- [Energy System Solutions (ESS), Bottrop, Germany](mailto:florian.dennewitz@unitybox.de)</span>
-</span><span id="L-69"><a href="#L-69"><span class="linenos">69</span></a>
-</span><span id="L-70"><a href="#L-70"><span class="linenos">70</span></a><span class="sd">---</span>
-</span><span id="L-71"><a href="#L-71"><span class="linenos">71</span></a>
-</span><span id="L-72"><a href="#L-72"><span class="linenos">72</span></a><span class="sd">&quot;&quot;&quot;</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="c1"># -*- coding: utf-8 -*-</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos">  2</span></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a><span class="sd">**Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a>
+</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a>
+</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="sd">### Authors:</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="sd">Florian Dennewitz (Maintainer)&lt;sup&gt;1,2&lt;/sup&gt;, Leonora Kastrati (Maintainer)&lt;sup&gt;1&lt;/sup&gt;, Niklas Nickig (Maintainer)&lt;sup&gt;2&lt;/sup&gt;, Matthias Bahr (Contributor)&lt;sup&gt;2&lt;/sup&gt;</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a>
+</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a><span class="sd">---</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a>
+</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a><span class="sd">## Abstract</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a><span class="sd">This open-source simulation software enables real-time simulation of fuel cell system components without the use of mathematical solvers. Based on the Mean-Value-Modelling approach for transient process modelling, this software is web-based and addresses common challenges of existing simulation programs, such as high costs and lack of interoperability.</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a>
+</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a><span class="sd">### Example of Cathode Path</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a><span class="sd">&lt;p align=&quot;center&quot;&gt;</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a><span class="sd">  &lt;img src=&quot;https://zbt-tools.github.io/POSST/pic/figure1.png&quot; alt=&quot;Overview of Cathode Path&quot; width=&quot;500&quot;&gt;</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a><span class="sd">&lt;/p&gt;</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a>
+</span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a><span class="sd">### Results of Example</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a><span class="sd">&lt;p align=&quot;center&quot;&gt;</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a><span class="sd">  &lt;img src=&quot;https://zbt-tools.github.io/POSST/pic/figure8.png&quot; alt=&quot;Cathode Load Profile Simulation&quot; width=&quot;800&quot;&gt;</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a><span class="sd">&lt;/p&gt;</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a>
+</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a><span class="sd">### Link to Websimulation</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a><span class="sd">Here we provide a simulation environment on the Energy System Solutions Website:</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a><span class="sd">https://www.energy-system-solutions.de/simulation. Feel free to test the simulation and the integrated controller of the ZBT.</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a>
+</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a><span class="sd">---</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a>
+</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a><span class="sd">## Keywords</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a>
+</span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a><span class="sd">- Simulation</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="sd">- Open-source</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a><span class="sd">- Python</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a><span class="sd">- Black box modelling</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a><span class="sd">- Fuel cell system</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a>
+</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a><span class="sd">---</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a>
+</span><span id="L-41"><a href="#L-41"><span class="linenos"> 41</span></a><span class="sd">## Installation Guide</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a><span class="sd">### Installation with pip</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a><span class="sd">NOT AVAILABLE YET!</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a>
+</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a>
+</span><span id="L-46"><a href="#L-46"><span class="linenos"> 46</span></a><span class="sd">### Installation with GIT</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a>
+</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a><span class="sd">If you prefer to install directly from the repository, follow these steps:</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a>
+</span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a><span class="sd">Clone the Repository:</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a>
+</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a><span class="sd">    git clone https://github.com/ZBT-Tools/POSST.git</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>
+</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a><span class="sd">Navigate to the Project Directory:</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>
+</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a><span class="sd">    cd yourPath/POSST</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>
+</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a><span class="sd">Install Required Packages: Make sure you have a virtual environment set up (optional but recommended). Then install the required packages:</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a>
+</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a><span class="sd">    pip install -r requirements.txt</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>
+</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a><span class="sd">Create Your Process: Follow the documentation in the repository to set up your process model.</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>
+</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a><span class="sd">Simulate Process: Use the provided simulation tools to run your process model. Check the usage examples in the documentation for guidance.</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>
+</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a><span class="sd">Additional Notes</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>
+</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a><span class="sd">    Ensure that you have Python installed (preferably Python 3.7 or higher).</span>
+</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a><span class="sd">    If you encounter any issues, check the issues section of the repository for troubleshooting.</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>
+</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a><span class="sd">Feel free to reach out if you have any questions or need further assistance!</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a><span class="sd">---</span>
+</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>
+</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a><span class="sd">## Contents</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>
+</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a><span class="sd">### 1. Modelling of Reservoirs</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a><span class="sd">The reservoir model describes mass and enthalpy flow as well as temperature changes using ordinary differential equations.</span>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>
+</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a><span class="sd">&lt;p align=&quot;center&quot;&gt;</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a><span class="sd">  &lt;img src=&quot;https://zbt-tools.github.io/POSST/pic/figure2.png&quot; alt=&quot;Reservoir Inputs and Outputs&quot; width=&quot;500&quot;&gt;</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a><span class="sd">&lt;/p&gt;</span>
+</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>
+</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a><span class="sd">### 2. Modelling of Flows</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a><span class="sd">Assuming incompressible flow between reservoirs, mass flow is calculated with adaptations for potential backflow.</span>
+</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a>
+</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a><span class="sd">### 3. Modelling of Mixed Media</span>
+</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a><span class="sd">To calculate specific heat capacity and other properties, the gas composition is determined.</span>
+</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>
+</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a><span class="sd">### 4. Modelling of the Compressor</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a><span class="sd">The compressor is simulated using the “rotating disk” model. A Python library generates the compressor characteristic diagram.</span>
+</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>
+</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a><span class="sd">&lt;p align=&quot;center&quot;&gt;</span>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a><span class="sd">  &lt;img src=&quot;https://zbt-tools.github.io/POSST/pic/figure3.png&quot; alt=&quot;Compressor Model - Rotating Disk Approach&quot; width=&quot;500&quot;&gt;</span>
+</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a><span class="sd">&lt;/p&gt;</span>
+</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a><span class="sd">A Python library generates the compressor characteristic diagram:</span>
+</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>
+</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a><span class="sd">&lt;p align=&quot;center&quot;&gt;</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a><span class="sd">  &lt;img src=&quot;https://zbt-tools.github.io/POSST/pic/figure5.png&quot; alt=&quot;Compressor Characteristic Diagram&quot; width=&quot;500&quot;&gt;</span>
+</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a><span class="sd">&lt;/p&gt;</span>
+</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>
+</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a><span class="sd">### 5. Modelling of the Fuel Cell</span>
+</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a><span class="sd">To reduce a 2-D + 1-D spatially resolved fuel cell model to a voltage model, several simplifications are necessary. By focusing only on the voltage model and ignoring certain sub-models, the complexity of the simulation can be significantly reduced while maintaining core performance characteristics relevant to voltage output.</span>
+</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>
+</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a><span class="sd">---</span>
+</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a>
+</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a><span class="sd">## References</span>
+</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a><span class="sd">[1]	Dipl.-Ing. Sebastian Zahn, &quot;Arbeitsspielaufgelöste Modellbildung und Hardware-in-the-Loop-Simulation von Pkw-Dieselmotoren mit Abgasturboaufladung,&quot; Fachbereich Elektrotechnik und Informationstechnik, Technische Universität Darmstadt, Darmstadt, 2012.&lt;br&gt;</span>
+</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a><span class="sd">[2]	L. Guzzella und C. Onder, Introduction to Modeling and Control of Internal Combustion Engine Systems, 2. Aufl. Berlin, Heidelberg: Springer Berlin Heidelberg, 2009. Zugriff am: 29. Oktober 2024. [Online]. Verfügbar unter: https://link.springer.com/book/10.1007/978-3-642-10775-7&lt;br&gt;</span>
+</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a><span class="sd">[3]	P. Virtanen et al., &quot;SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python,&quot; Nature Methods, Jg. 17, S. 261–272, 2020, doi: 10.1038/s41592-019-0686-2.&lt;br&gt;</span>
+</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a><span class="sd">[4]	S. Gößling, &quot;2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen,&quot; Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.&lt;br&gt;</span>
+</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>
+</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a>
+</span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a>
+</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a><span class="sd">---</span>
+</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a>
+</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a><span class="sd">### Contact</span>
+</span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a><span class="sd">- [Energy System Solutions (ESS), Bottrop, Germany](mailto:florian.dennewitz@unitybox.de)</span>
+</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a><span class="sd">- [Hydrogen and Fuel Cell Center (ZBT), Duisburg, Germany](mailto:f.dennewitz@zbt.de)</span>
+</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a>
+</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a>
+</span><span id="L-123"><a href="#L-123"><span class="linenos">123</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span></pre></div>
 
 
