@@ -17,7 +17,7 @@ class model_1():
         T = current Temperature
     ## Description  
     Model to define Volumne of Container and Calculation of states.  
-    ### **Calculation**
+    ### Calculation
     1. Change of pressure in Reservoir  
     
     $$\frac{\delta p}{\delta t} = \frac{\kappa \cdot R}{V} \cdot  \left(\dot{m}_{in} \cdot T_{in} - \dot{m}_{out} \cdot T_{out}\right)$$

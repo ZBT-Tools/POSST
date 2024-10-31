@@ -1,4 +1,4 @@
-from src.POSST.misc import Gas
+from misc import Gas
 import numpy as np
 import math
 
