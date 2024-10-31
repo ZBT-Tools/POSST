@@ -14,7 +14,7 @@ Subcategory of Gasmixtures for Gasflows
 
 ### Mainmodels
 
-- [Developed Version 0.1 Gas]( ./misc/Gas.html)
+- [Gas Mixture 0.1]( ./misc/Gas.html)
 
     
 """

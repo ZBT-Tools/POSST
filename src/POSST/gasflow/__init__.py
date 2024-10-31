@@ -14,11 +14,11 @@ Subcategory of all Components for Modeling Gasflow
 
 ### Mainmodels
 
-- [Developed Version 0.1 Reservoir]( ./gasflow/reservoir.html)
-- [Developed Version 0.1 Restriction]( ./gasflow/restriction.html)
+- [Reservoir 0.1]( ./gasflow/reservoir.html)
+- [Restriction 0.1]( ./gasflow/restriction.html)
 
 ### Components
 
-- [Developed Version 0.1 Compressor]( ./gasflow/compressor.html)
+- [Compressor 0.1]( ./gasflow/compressor.html)
     
 """

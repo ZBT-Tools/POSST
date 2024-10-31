@@ -14,6 +14,6 @@ Subcategory of Fuel Cell Models.
 
 ### Stackmodel ZBT
 
-- [Developed Version 0.1 Stackmodel]( https://zbt-tools.github.io/POSST/html/POSST/fuelcell/stack.html)
+- [Stackmodel 0.1]( https://zbt-tools.github.io/POSST/html/POSST/fuelcell/stack.html)
     
 """
