@@ -10,6 +10,7 @@ Florian Dennewitz (Maintainer), Leonora Kastrati (Maintainer), Niklas Nickig (Ma
 This open-source simulation software enables real-time simulation of fuel cell system components without the use of mathematical solvers. Based on the Mean-Value-Modelling approach for black box modelling, this software is web-based and addresses common challenges of existing simulation programs, such as high costs and lack of interoperability.
 
 ### Example of Cathode Path
+
 <p align="center">
   <img src="pic/figure1.png" alt="Overview of Cathode Path" width="500">
 </p>
