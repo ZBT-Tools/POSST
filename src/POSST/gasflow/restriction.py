@@ -1,4 +1,4 @@
-from misc import Gas
+from POSST.misc import Gas
 
 class model_1():
     """Calculate Massflow"""
