@@ -133,5 +133,7 @@ To reduce a 2-D + 1-D spatially resolved fuel cell model to a voltage model, sev
 - [Energy System Solutions (ESS), Bottrop, Germany](mailto:florian.dennewitz@unitybox.de)
 - [Hydrogen and Fuel Cell Center (ZBT), Duisburg, Germany](mailto:f.dennewitz@zbt.de)
 
+---
+
 ## Documentation
 - [Docu](https://zbt-tools.github.io/POSST/html/POSST.html)
