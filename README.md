@@ -1,16 +1,32 @@
-# POSST
-**Python Open Source Simulation Tool (POSST): Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**
+
+
+
+# Python Open Source Simulation Tool (POSST):
+
+**Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)**
+
+### Project partner:
+
+<p align="left">
+  <img src="pic/ESS_LOGO_vektor.svg" alt="ESS Logo" width="40">
+<a href="https://www.energy-system-solutions.de/">Energy System Solutions (ESS)<sup>1</sup></a>
+</p>
+<p align="left">
+  <img src="pic/ZBT_Logo_RGB_B_L.svg" alt="ZBT Logo" width="40">
+<a href="https://zbt.de/das-zbt/wissenschaftliche-abteilungen/brennstoffzellensysteme/">Hydrogen and Fuel Cell Center (ZBT)<sup>2</sup></a>
+</p>
+
+[Become a project partner](mailto:florian.dennewitz@unitybox.de)
 
 ### Authors:
-Florian Dennewitz (Maintainer), Leonora Kastrati (Maintainer), Niklas Nickig (Maintainer), Matthias Bahr (Contributor)
+Florian Dennewitz (Maintainer)<sup>1,2</sup>, Leonora Kastrati (Maintainer)<sup>1</sup>, Niklas Nickig (Maintainer)<sup>2</sup>, Matthias Bahr (Contributor)<sup>2</sup>
 
 ---
 
 ## Abstract
-This open-source simulation software enables real-time simulation of fuel cell system components without the use of mathematical solvers. Based on the Mean-Value-Modelling approach for black box modelling, this software is web-based and addresses common challenges of existing simulation programs, such as high costs and lack of interoperability.
+This open-source simulation software enables real-time simulation of fuel cell system components without the use of mathematical solvers. Based on the Mean-Value-Modelling approach for transient process modelling, this software is web-based and addresses common challenges of existing simulation programs, such as high costs and lack of interoperability.
 
 ### Example of Cathode Path
-
 <p align="center">
   <img src="pic/figure1.png" alt="Overview of Cathode Path" width="500">
 </p>
@@ -20,12 +36,53 @@ This open-source simulation software enables real-time simulation of fuel cell s
   <img src="pic/figure8.png" alt="Cathode Load Profile Simulation" width="800">
 </p>
 
+### Link to Websimulation
+Here we provide a simulation environment on the Energy System Solutions Website:
+https://www.energy-system-solutions.de/simulation. Feel free to test the simulation and the integrated controller of the ZBT.
+
+---
+
 ## Keywords
+
 - Simulation
 - Open-source
 - Python
 - Black box modelling
 - Fuel cell system
+
+---
+
+## Installation Guide
+### Installation with pip
+NOT AVAILABLE YET!
+
+
+### Installation with GIT
+
+If you prefer to install directly from the repository, follow these steps:
+
+Clone the Repository:
+
+    git clone https://github.com/ZBT-Tools/POSST.git
+
+Navigate to the Project Directory:
+
+    cd yourPath/POSST
+
+Install Required Packages: Make sure you have a virtual environment set up (optional but recommended). Then install the required packages:
+
+    pip install -r requirements.txt
+
+Create Your Process: Follow the documentation in the repository to set up your process model.
+
+Simulate Process: Use the provided simulation tools to run your process model. Check the usage examples in the documentation for guidance.
+
+Additional Notes
+
+    Ensure that you have Python installed (preferably Python 3.7 or higher).
+    If you encounter any issues, check the issues section of the repository for troubleshooting.
+
+Feel free to reach out if you have any questions or need further assistance!
 
 ---
 
@@ -73,10 +130,6 @@ To reduce a 2-D + 1-D spatially resolved fuel cell model to a voltage model, sev
 ---
 
 ### Contact
-- [Hydrogen and Fuel Cell Center (ZBT), Duisburg, Germany](mailto:f.dennewitz@zbt.de)
 - [Energy System Solutions (ESS), Bottrop, Germany](mailto:florian.dennewitz@unitybox.de)
+- [Hydrogen and Fuel Cell Center (ZBT), Duisburg, Germany](mailto:f.dennewitz@zbt.de)
 
----
-
-### Doku
-[>Docs](https://zbt-tools.github.io/POSST/html/index.html)
