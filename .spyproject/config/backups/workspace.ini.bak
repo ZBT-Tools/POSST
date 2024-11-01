@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['src\\POSST\\gasflow\\reservoir.py', 'src\\POSST\\__init__.py', 'src\\POSST\\fuelcell\\__init__.py', 'src\\POSST\\fuelcell\\stack.py', 'src\\POSST\\gasflow\\__init__.py', 'src\\POSST\\misc\\__init__.py', 'README.md']
+recent_files = ['src\\POSST\\gasflow\\reservoir.py', 'src\\POSST\\__init__.py', 'src\\POSST\\fuelcell\\__init__.py', 'src\\POSST\\fuelcell\\stack.py', 'src\\POSST\\gasflow\\__init__.py', 'src\\POSST\\misc\\__init__.py', 'README.md', 'pyproject.toml']
 
 [main]
 version = 0.2.0

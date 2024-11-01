@@ -2,9 +2,12 @@
 requires = ["hatchling","setuptools", "wheel"]
 build-backend = "setuptools.build_meta"#"hatchling.build"
 
+[tool.setuptools.dynamic]
+dependencies = {file = ["./src/POSST/requirements.txt"]}
+
 [project]
 name = "POSST-Sim"
-version = "0.0.2"
+version = "0.0.6"
 authors = [
   { name="Florian Dennewitz", email="florian.dennewitz@unitybox.de" },
   { name="Niklas Nickig", email="n.nickig@zbt.de"}
@@ -23,6 +26,8 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+dynamic = ["dependencies"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/POSST"]

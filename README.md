@@ -54,7 +54,8 @@ https://www.energy-system-solutions.de/simulation. Feel free to test the simulat
 
 ## Installation Guide
 ### Installation with pip
-NOT AVAILABLE YET!
+
+    pip install -i https://test.pypi.org/simple/ POSST-Sim
 
 
 ### Installation with GIT
@@ -71,7 +72,7 @@ Navigate to the Project Directory:
 
 Install Required Packages: Make sure you have a virtual environment set up (optional but recommended). Then install the required packages:
 
-    pip install -r requirements.txt
+    pip install -r src/POSST/requirements.txt
 
 Create Your Process: Follow the documentation in the repository to set up your process model.
 

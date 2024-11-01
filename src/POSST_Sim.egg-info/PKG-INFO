@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: POSST-Sim
-Version: 0.0.2
+Version: 0.0.6
 Summary: Python Open Source Simulation Tool (POSST):Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)
 Author-email: Florian Dennewitz <florian.dennewitz@unitybox.de>, Niklas Nickig <n.nickig@zbt.de>
 Maintainer-email: Leonora Kastrati <leonoraa.21@hotmail.com>, Matthias Bahr <m.bahr@zbt.de>
@@ -12,6 +12,9 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: h5py
+Requires-Dist: numpy
+Requires-Dist: scipy
 
 
 
@@ -69,7 +72,8 @@ https://www.energy-system-solutions.de/simulation. Feel free to test the simulat
 
 ## Installation Guide
 ### Installation with pip
-NOT AVAILABLE YET!
+
+    pip install -i https://test.pypi.org/simple/ POSST-Sim
 
 
 ### Installation with GIT
@@ -86,7 +90,7 @@ Navigate to the Project Directory:
 
 Install Required Packages: Make sure you have a virtual environment set up (optional but recommended). Then install the required packages:
 
-    pip install -r requirements.txt
+    pip install -r src/POSST/requirements.txt
 
 Create Your Process: Follow the documentation in the repository to set up your process model.
 
