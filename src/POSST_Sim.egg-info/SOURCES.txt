@@ -1,9 +1,8 @@
 LICENSE
 README.md
 pyproject.toml
-./src/POSST/requirements.txt
+src/requirements.txt
 src/POSST/__init__.py
-src/POSST/requirements.txt
 src/POSST/fuelcell/__init__.py
 src/POSST/fuelcell/stack.py
 src/POSST/gasflow/__init__.py
@@ -15,5 +14,4 @@ src/POSST/misc/__init__.py
 src/POSST_Sim.egg-info/PKG-INFO
 src/POSST_Sim.egg-info/SOURCES.txt
 src/POSST_Sim.egg-info/dependency_links.txt
-src/POSST_Sim.egg-info/requires.txt
 src/POSST_Sim.egg-info/top_level.txt

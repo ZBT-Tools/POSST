@@ -1,38 +1,34 @@
 [build-system]
-requires = ["hatchling","setuptools", "wheel"]
-build-backend = "setuptools.build_meta"#"hatchling.build"
-
-[tool.setuptools.dynamic]
-dependencies = {file = ["./src/POSST/requirements.txt"]}
+requires = [ "hatchling", "setuptools", "wheel",]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "POSST-Sim"
-version = "0.0.6"
-authors = [
-  { name="Florian Dennewitz", email="florian.dennewitz@unitybox.de" },
-  { name="Niklas Nickig", email="n.nickig@zbt.de"}
-  ]
-
-maintainers = [
-  { name="Leonora Kastrati", email="leonoraa.21@hotmail.com" },
-  { name="Matthias Bahr", email="m.bahr@zbt.de" }
- ]
-
-description = "Python Open Source Simulation Tool (POSST):Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)"
+version = "0.0.10"
+description = "Python Open Source Simulation Tool (POSST): Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)"
 readme = "README.md"
 requires-python = ">=3.8"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
+classifiers = [ "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent",]
+#dependencies = [ "h5py==3.7.0", "numpy==1.22.4", "numpy==1.24.3", "POSST==0.1.1", "scipy==1.10.1", "scipy==1.8.1",]
+[[project.authors]]
+name = "Florian Dennewitz"
+email = "florian.dennewitz@unitybox.de"
 
-dynamic = ["dependencies"]
+[[project.authors]]
+name = "Niklas Nickig"
+email = "n.nickig@zbt.de"
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/POSST"]
+[[project.maintainers]]
+name = "Leonora Kastrati"
+email = "leonoraa.21@hotmail.com"
 
+[[project.maintainers]]
+name = "Matthias Bahr"
+email = "m.bahr@zbt.de"
 
 [project.urls]
 Homepage = "https://github.com/ZBT-Tools/POSST"
 Issues = "https://zbt-tools.github.io/POSST/html/POSST.html"
+
+[tool.hatch.build.targets.wheel]
+packages = [ "src/POSST",]
