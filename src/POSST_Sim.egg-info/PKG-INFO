@@ -1,3 +1,18 @@
+Metadata-Version: 2.1
+Name: POSST-Sim
+Version: 0.0.2
+Summary: Python Open Source Simulation Tool (POSST):Simulating Transient Systems Based on Controlled-Oriented Models (COM), Mean Value Modeling (MVM), Lumped Parameter System (LPS)
+Author-email: Florian Dennewitz <florian.dennewitz@unitybox.de>, Niklas Nickig <n.nickig@zbt.de>
+Maintainer-email: Leonora Kastrati <leonoraa.21@hotmail.com>, Matthias Bahr <m.bahr@zbt.de>
+Project-URL: Homepage, https://github.com/ZBT-Tools/POSST
+Project-URL: Issues, https://zbt-tools.github.io/POSST/html/POSST.html
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 
 
 
