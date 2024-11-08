@@ -1,20 +1,6 @@
 
 class model_1():
     r"""
-    ## Arguments
-    
-        V = volume of container element  
-        T_0 = start temperature   
-        p_0 = start pressure  
-        cp = specific heat capacity  
-        R = gas constant  
-        dt = time step  
-    
-    ## Returns
-    
-        p = current pressure
-        T = current Temperature
-    
     ## Description  
     Model to define Volume of Container and Calculation of states.  
     
@@ -30,6 +16,19 @@ class model_1():
                                             c_p \cdot \dot{m}_{\text{out}} \cdot T_{\text{out}} - c_v \cdot \left(\dot{m}_{\text{in}}-\dot{m}_{\text{out}}\right)\right)$$
     """  
     def __init__(self, name = "Pipe", V=0.001, T_0 = 293.15, p_0 = 1.0135e5, cp = 1000 ,R =237, dt=1e-3): # 8.314):
+        r"""
+        ## Arguments
+            V: volume of container element in [$m^{3]$]
+            T_0: initial temperature in [$K$]
+            p_0: initial pressure in [$Pa$]
+            cp: specific heat capacity in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
+            R: gas constant in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
+            dt: time step in [$s$]
+
+        ## Returns
+            Instance of Reservoir
+
+        """
         self.name = name
         self.V = V
         self.cp= cp
@@ -43,6 +42,15 @@ class model_1():
         self.dt =dt
 
     def __call__(self ,m_in, m_out, T_in):
+        """
+        ## Arguments
+            m_in: inlet massflow in [$Kg \cdot s^{-1}$]
+            m_out: outlet massflow in [$Kg \cdot s^{-1}$]
+
+        ## Calculated
+            p: current pressure in [$Pa$]
+            T: current Temperature in [$K$]
+        """
         # T_in+=273.15
         self.T_in_old = self.T_in
         self.T_in = T_in
