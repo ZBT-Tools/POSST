@@ -6,11 +6,11 @@ import math
 class model():
     r"""
     ## Description  
-        The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.
-        There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.
+    The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.
+    There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.
 
     ## Reference
-        [1]	S. Gößling, "2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen," Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.<br>
+    [1]	S. Gößling, "2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen," Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.<br>
 
     """
     def __init__(self, P=None, dt=1e-3):
