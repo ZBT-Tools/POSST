@@ -141,11 +141,11 @@
 </span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a><span class="k">class</span> <span class="nc">model</span><span class="p">():</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="sd">    ## Description  </span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="sd">        The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a><span class="sd">        There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="sd">    The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a><span class="sd">    There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.</span>
 </span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a>
 </span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a><span class="sd">    ## Reference</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a><span class="sd">        [1]	S. Gößling, &quot;2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen,&quot; Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.&lt;br&gt;</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a><span class="sd">    [1]	S. Gößling, &quot;2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen,&quot; Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.&lt;br&gt;</span>
 </span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a>
 </span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
@@ -513,11 +513,11 @@
             <div class="pdoc-code codehilite"><pre><span></span><span id="model-7"><a href="#model-7"><span class="linenos">  7</span></a><span class="k">class</span> <span class="nc">model</span><span class="p">():</span>
 </span><span id="model-8"><a href="#model-8"><span class="linenos">  8</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="model-9"><a href="#model-9"><span class="linenos">  9</span></a><span class="sd">    ## Description  </span>
-</span><span id="model-10"><a href="#model-10"><span class="linenos"> 10</span></a><span class="sd">        The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.</span>
-</span><span id="model-11"><a href="#model-11"><span class="linenos"> 11</span></a><span class="sd">        There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.</span>
+</span><span id="model-10"><a href="#model-10"><span class="linenos"> 10</span></a><span class="sd">    The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.</span>
+</span><span id="model-11"><a href="#model-11"><span class="linenos"> 11</span></a><span class="sd">    There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.</span>
 </span><span id="model-12"><a href="#model-12"><span class="linenos"> 12</span></a>
 </span><span id="model-13"><a href="#model-13"><span class="linenos"> 13</span></a><span class="sd">    ## Reference</span>
-</span><span id="model-14"><a href="#model-14"><span class="linenos"> 14</span></a><span class="sd">        [1]	S. Gößling, &quot;2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen,&quot; Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.&lt;br&gt;</span>
+</span><span id="model-14"><a href="#model-14"><span class="linenos"> 14</span></a><span class="sd">    [1]	S. Gößling, &quot;2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen,&quot; Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.&lt;br&gt;</span>
 </span><span id="model-15"><a href="#model-15"><span class="linenos"> 15</span></a>
 </span><span id="model-16"><a href="#model-16"><span class="linenos"> 16</span></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="model-17"><a href="#model-17"><span class="linenos"> 17</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
@@ -872,14 +872,12 @@
 
             <div class="docstring"><h2 id="description">Description</h2>
 
-<pre><code>The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.
-There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.
-</code></pre>
+<p>The fuel cell model is divided into various sub-models to calculate flow fields, cell voltage, and thermal management. Based on the voltage model described by Gößling in a 2D-1D model [1], a reduced model is implemented that omits several key features.
+There is no segmentation along the gas paths, and the membrane does not serve as a water reservoir. The membrane humidity relies solely on the average relative humidity of the medium in the flow fields.</p>
 
 <h2 id="reference">Reference</h2>
 
-<pre><code>[1]     S. Gößling, "2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen," Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.&lt;br&gt;
-</code></pre>
+<p>[1] S. Gößling, "2-D + 1-D ortsaufgelöste Modellierung von PEM-Brennstoffzellen," Fakultät für Ingeneuirwissenschaften, Abteilung Maschienenbau und Verfahrenstechnik, Universität Duisburg Essen, Duisburg, 2019.<br></p>
 </div>
 
 
