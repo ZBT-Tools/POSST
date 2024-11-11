@@ -2,23 +2,21 @@ import numpy as np
 eps=1e-13
 class model_1():
     r"""
-    ## Arguments
-    
-    
-        dt = time step  
-        dn = ??   
-        cp = specific heat capacity  
-        R = gas constant  
-        repo = "./POSST"  
-    ## Returns
-        
-    
-        m=massflow
     ## Description  
-    Model for fitting curve 2  
-    $m = y \cdot x$
+    Model for fitting curve 1
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
+        r"""
+        ## Arguments
+           dt: time step in [$s$]
+           dn: maximal allowed change of angular velocity in [$rpm \cdot s°{-1}$]
+           cp: specific heat capacity in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
+           R: gas constant in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
+           repo: "./POSST"
+
+       ## Returns
+           Instance of Reservoir of compressor model 1
+        """
         self.dt = dt
         self.cp = cp
         self.R = R
@@ -35,6 +33,15 @@ class model_1():
         self.T_out = 293.15
 
     def __call__(self, n, p_in, p_out, T_in=293.15):
+        r"""
+        ## Arguments
+            n: angular velocity in [$rpm$]
+            p_in: inlet pressure in [$Pa$]
+            p_out: outlet pressure in [$Pa$]
+            T_in: inlet temperature in [$K$]
+        ## Returns
+            m: massflow in [$Kg \cdot s^{-1}$]
+        """
         self.iteration += 1
         p_ratio = p_out / p_in
         self.n_t = np.clip(n, max(self.m_fit.min_n, self.n_t - self.dn), min(self.m_fit.max_n, self.n_t + self.dn))
@@ -54,23 +61,21 @@ class model_1():
 
 class model_2():
     r"""
-    ## Arguments
-    
-    
-        dt = time step  
-        dn = ??   
-        cp = specific heat capacity  
-        R = gas constant  
-        repo = "./POSST"  
-    ## Returns
-        
-    
-        m=massflow
-    ## Description  
-    Model for fitting curve 2  
-    $m = y \cdot x$
+    ## Description
+    Model for fitting curve 2
     """
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
+        r"""
+        ## Arguments
+           dt: time step in [$s$]
+           dn: maximal allowed change of angular velocity in [$rpm \cdot s°{-1}$]
+           cp: specific heat capacity in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
+           R: gas constant in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
+           repo: "./POSST"
+
+       ## Returns
+           Instance of Reservoir of compressor model 2
+       """
         self.dt = dt
         self.cp = cp
         self.R = R
@@ -90,6 +95,15 @@ class model_2():
         self.T_out = 293.15
 
     def __call__(self, n, p_in, p_out, T_in=293.15):
+        r"""
+        ## Arguments
+            n: angular velocity in [$rpm$]
+            p_in: inlet pressure in [$Pa$]
+            p_out: outlet pressure in [$Pa$]
+            T_in: inlet temperature in [$K$]
+        ## Returns
+            m: massflow in [$Kg \cdot s^{-1}$]
+        """
         self.n_t = np.clip(n, max(self.total_p.min_n, self.n_t - self.dn), min(self.total_p.max_n, self.n_t + self.dn))
         if self.n_t >= 1e-7:
             self.m = self.Res_Co.m
@@ -106,20 +120,39 @@ class model_2():
         return self.m
 
 class interp_Comp_p():
+    r"""
+    ## Description
+    Map interpolation class for compressor model 2.
+    """
     def __init__(self, ddir='./data'):
+        r"""
+        ## Arguments
+            ddir: data directory
+
+        ## Returns
+            Instance of pressure map
+        """
         import scipy
         self.data_raw = load_comp(data_dir=ddir)
         self.data_raw |= {'0': {'etha': [1], 'm':[eps], 'p':[1.], 'n':[0]}}
-        self.m_grid, self.n_grid, self.p_grid = self.grid_calc()
+        self.m_grid, self.n_grid, self.p_grid = self._grid_calc()
         self.interp = scipy.interpolate.RegularGridInterpolator((self.m_grid[:,0], self.n_grid[0,:]), self.p_grid)
 
     def __call__(self, n, m):
+        r"""
+        ## Arguments
+            n: angular velocity in [$rpm$]
+            m: mass flow in [$Kg \cdot s^{-1}$]
+
+        ## Returns
+            p: pressure ratio in [$-$]
+        """
         self.m_clip = np.clip(m, self.min_m, self.max_m)
         self.n_clip = np.clip(n, self.min_n, self.max_n)
         self.p = self.interp((self.m_clip, self.n_clip))
         return max(self.p, 0)
 
-    def grid_calc(self):
+    def _grid_calc(self):
         import numpy as np
         import scipy
         import copy
@@ -150,8 +183,7 @@ class interp_Comp_p():
         for i in self.data_raw.keys():
             if i != '0':
                 self.m_fit = np.linspace(self.min_m,self.max_m,100)
-                para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i]['m'])),
-                               p=copy.deepcopy(list(self.data_raw[i]['p'])))
+                para= self.__p_ex(m=copy.deepcopy(list(self.data_raw[i]['m'])), p=copy.deepcopy(list(self.data_raw[i]['p'])))
                 self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit<max(self.data_raw[i]['m']))], *para))
                 self.m_fit_arr += list(self.m_fit[np.where(self.m_fit<max(self.data_raw[i]['m']))])
                 self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit<max(self.data_raw[i]['m']))]), int(i)))
@@ -167,26 +199,45 @@ class interp_Comp_p():
 
         return grid_x, grid_y, grid_z
 
-    def p_ex(self, m, p):
+    def __p_ex(self, m, p):
         import scipy
         popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
         return popt
 
 class interp_Comp_m():
+    r"""
+    ## Description
+    Map interpolation class for compressor model 1.
+    """
     def __init__(self, ddir='./data'):
+        r"""
+        ## Arguments
+            ddir: data directory
+
+        ## Returns
+            Instance of pressure map
+        """
         import scipy
         self.data_raw = load_comp(data_dir=ddir)
         self.data_raw |= {'0': {'etha': [1], 'm':[eps], 'p':[1.], 'n':[0]}}
-        self.p_grid, self.n_grid, self.m_grid = self.grid_calc()
+        self.p_grid, self.n_grid, self.m_grid = self._grid_calc()
         self.interp = scipy.interpolate.RegularGridInterpolator((self.p_grid[:,0], self.n_grid[0,:]), self.m_grid)
 
     def __call__(self, n, p_ratio):
+        r"""
+        ## Arguments
+            n: angular velocity in [$rpm$]
+            p_ratio: pressure ratio in [$-$]
+
+        ## Returns
+            m: mass flow in [$Kg \cdot s^{-1}$]
+        """
         self.p_clip = np.clip(p_ratio, self.min_p, self.max_p)
         self.n_clip = np.clip(n, self.min_n, self.max_n)
         self.m = self.interp((self.p_clip, self.n_clip))
         return self.m
 
-    def grid_calc(self):
+    def _grid_calc(self):
         import numpy as np
         import scipy
         import copy
@@ -217,8 +268,7 @@ class interp_Comp_m():
         for i in self.data_raw.keys():
             if i != '0':
                 self.m_fit = np.linspace(self.min_m,self.max_m,100)
-                para=self.p_ex(m=copy.deepcopy(list(self.data_raw[i]['m'])),
-                               p=copy.deepcopy(list(self.data_raw[i]['p'])))
+                para= self.__p_ex(m=copy.deepcopy(list(self.data_raw[i]['m'])), p=copy.deepcopy(list(self.data_raw[i]['p'])))
                 self.p_fit_arr += list(p_fit(self.m_fit[np.where(self.m_fit < max(self.data_raw[i]['m']))], *para))
                 self.m_fit_arr += list(self.m_fit[np.where(self.m_fit < max(self.data_raw[i]['m']))])
                 self.n_fit_arr += list(np.full(len(self.m_fit[np.where(self.m_fit < max(self.data_raw[i]['m']))]), int(i)))
@@ -234,7 +284,7 @@ class interp_Comp_m():
 
         return grid_x, grid_y, grid_z
 
-    def p_ex(self, m, p):
+    def __p_ex(self, m, p):
         import scipy
         popt, pcov = scipy.optimize.curve_fit(p_fit, m, p)
         return popt
@@ -242,17 +292,12 @@ class interp_Comp_m():
 def load_comp(data_dir = '/data'):
     '''
     ## Arguments
-    
-        
-        data_dir  
+        ddir: data directory
     ## Returns
-        
+        Raw map data as dict
     
-        dict  
-    
-    Description
-        
-        
+    ##Description
+
             ./data_dir
         
         
@@ -298,6 +343,9 @@ def load_comp(data_dir = '/data'):
     return Data
 
 def p_fit(m, p0, p1, p2):
+    r"""
+    Pressure fit function for better extrapolation beyond the surge line.
+    """
     # p=p0-p1*np.exp(m+p2)
     p=p0*m**(p1)+p2
     return p
