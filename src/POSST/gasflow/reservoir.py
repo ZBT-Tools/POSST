@@ -18,7 +18,7 @@ class model_1():
     def __init__(self, name = "Pipe", V=0.001, T_0 = 293.15, p_0 = 1.0135e5, cp = 1000 ,R =237, dt=1e-3): # 8.314):
         r"""
         ## Arguments
-            V: volume of container element in [$m^{3]$]
+            V: volume of container element in $$m^{3]$$
             T_0: initial temperature in [$K$]
             p_0: initial pressure in [$Pa$]
             cp: specific heat capacity in [$J \cdot Kg^{-1} \cdot K^{-1}}$]

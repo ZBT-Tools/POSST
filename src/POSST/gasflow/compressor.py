@@ -8,7 +8,7 @@ class model_1():
     def __init__(self, dt, dn, cp=1000, R=237, repo_dir='./POSST'):
         r"""
         ## Arguments
-           dt: time step in [$s$]
+           dt: time step in $s$
            dn: maximal allowed change of angular velocity in [$rpm \cdot s°{-1}$]
            cp: specific heat capacity in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
            R: gas constant in [$J \cdot Kg^{-1} \cdot K^{-1}}$]
